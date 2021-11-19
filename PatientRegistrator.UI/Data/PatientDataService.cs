@@ -1,32 +1,31 @@
 ﻿namespace PatientRegistrator.UI.Data
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Linq;
 
+    using Microsoft.EntityFrameworkCore;
+
+    using PatientRegistrator.DataAccess;
     using PatientRegistrator.Model;
 
 
     public class PatientDataService : IPatientDataService
     {
-        public IEnumerable<Patient> GetAll()
+        private Func<CoreContext> _contextCreator;
+
+        public PatientDataService(Func<CoreContext> contextCreator)
         {
-            return this._allPatients;
+            this._contextCreator = contextCreator;
         }
 
-        private IEnumerable<Patient> _allPatients = new List<Patient>
-                                                        {
-                                                            new Patient
-                                                                {
-                                                                    Name = "张某某",
-                                                                    Age = 37,
-                                                                    Gender = Gender.Male
-                                                                },
-                                                            new Patient
-                                                                {
-                                                                    Name = "王某",
-                                                                    Age = 19,
-                                                                    Gender = Gender.Femail
-                                                                }
-                                                        };
+        public IEnumerable<Patient> GetAll()
+        {
+            using (var ctx = _contextCreator())
+            {
+                return ctx.Patients.AsNoTracking().ToList();
+            }
+        }
     }
 }
