@@ -2,18 +2,19 @@
 {
     using System.Collections;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using PatientRegistrator.Model;
 
 
     public class FakeDataService : IPatientDataService
     {
-        public IEnumerable<Patient> GetAll()
+        public Task<List<Patient>> GetAllAsync()
         {
-            return this._allPatients;
+            return Task.FromResult(this._allPatients);
         }
 
-        private IEnumerable<Patient> _allPatients = new List<Patient>
+        private List<Patient> _allPatients = new List<Patient>
                                                         {
                                                             new Patient
                                                                 {
@@ -28,5 +29,7 @@
                                                                     Gender = Gender.Femail
                                                                 }
                                                         };
+
+
     }
 }

@@ -1,11 +1,12 @@
 ﻿namespace PatientRegistrator.UI.Data
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using PatientRegistrator.Model;
 
     public interface IPatientDataService
     {
-        IEnumerable<Patient> GetAll();
+        Task<List<Patient>> GetAllAsync();
     }
 }

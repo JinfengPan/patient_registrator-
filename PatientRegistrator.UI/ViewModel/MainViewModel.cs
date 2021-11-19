@@ -1,6 +1,7 @@
 ﻿namespace PatientRegistrator.UI.ViewModel
 {
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
 
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
@@ -17,9 +18,9 @@
 
         public ObservableCollection<Patient> Patients { get; set; }
 
-        public void Load()
+        public async Task LoadAsync()
         {
-            var patients = this._patientDataService.GetAll();
+            var patients = await this._patientDataService.GetAllAsync();
 
             Patients.Clear();
 

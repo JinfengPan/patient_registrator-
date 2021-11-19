@@ -4,6 +4,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
 
@@ -20,11 +21,11 @@
             this._contextCreator = contextCreator;
         }
 
-        public IEnumerable<Patient> GetAll()
+        public async Task<List<Patient>> GetAllAsync()
         {
             using (var ctx = _contextCreator())
             {
-                return ctx.Patients.AsNoTracking().ToList();
+                return await ctx.Patients.AsNoTracking().ToListAsync();
             }
         }
     }
