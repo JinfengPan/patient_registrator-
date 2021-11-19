@@ -1,41 +1,41 @@
-﻿namespace PatientRegistrator.DataAccess
-{
-    using System.IO;
+﻿//namespace PatientRegistrator.DataAccess
+//{
+//    using System.IO;
 
-    using Microsoft.EntityFrameworkCore;
+//    using Microsoft.EntityFrameworkCore;
 
-    using PatientRegistrator.Model;
+//    using PatientRegistrator.Model;
 
-    public class CoreContext : DbContext
-    {
-        public CoreContext(DbContextOptions<CoreContext> options)
-            : base(options)
-        {
-        }
+//    public class CoreContext : DbContext
+//    {
+//        public CoreContext(DbContextOptions<CoreContext> options)
+//            : base(options)
+//        {
+//        }
 
-        public DbSet<Patient> Patients { get; set; }
+//        public DbSet<Patient> Patients { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
+//        protected override void OnModelCreating(ModelBuilder modelBuilder)
+//        {
+//            base.OnModelCreating(modelBuilder);
+//        }
 
-        //public CoreContext CreateDbContext(string[] args)
-        //{
-        //    var optionsBuilder = new DbContextOptionsBuilder<CoreContext>();
+//        //public CoreContext CreateDbContext(string[] args)
+//        //{
+//        //    var optionsBuilder = new DbContextOptionsBuilder<CoreContext>();
 
-        //    var configuration = new ConfigurationBuilder()
-        //        .SetBasePath(Directory.GetCurrentDirectory())
-        //        .AddJsonFile("appsettings.json")
-        //        .Build();
+//        //    var configuration = new ConfigurationBuilder()
+//        //        .SetBasePath(Directory.GetCurrentDirectory())
+//        //        .AddJsonFile("appsettings.json")
+//        //        .Build();
 
-        //    var connectionString = configuration.GetConnectionString("sqlConnection");
+//        //    var connectionString = configuration.GetConnectionString("sqlConnection");
 
-        //    optionsBuilder.UseSqlServer(
-        //        connectionString,
-        //        b => b.MigrationsAssembly("Eurofins.Adms.Core.Infrastructure.Entities.Migrations"));
+//        //    optionsBuilder.UseSqlServer(
+//        //        connectionString,
+//        //        b => b.MigrationsAssembly("Eurofins.Adms.Core.Infrastructure.Entities.Migrations"));
 
-        //    return new CoreContext(optionsBuilder.Options);
-        //}
-    }
-}
+//        //    return new CoreContext(optionsBuilder.Options);
+//        //}
+//    }
+//}
