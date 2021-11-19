@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PatientRegistrator.UI"
         mc:Ignorable="d"
-        Title="慢性硬膜下血肿患者资料登记汇总系统" Height="450" Width="800" FontSize="20">
+        Title="慢性硬膜下血肿患者资料登记汇总系统" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
@@ -18,10 +18,10 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Button Grid.Row="0"></Button>
-            <Button Grid.Row="1"></Button>
-            <Button Grid.Row="2"></Button>
-            <Button Grid.Row="3"></Button>
+            <Button Content="  输入新病例" Grid.Row="0"></Button>
+            <Button Content="导出数据" Grid.Row="1"></Button>
+            <Button Content="展示全部病例" Grid.Row="2"></Button>
+            <Button Content="退出" Grid.Row="3"></Button>
         </Grid>
 
     </Grid>
