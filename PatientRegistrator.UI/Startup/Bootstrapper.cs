@@ -4,6 +4,7 @@
 
     using Autofac;
 
+    using PatientRegistrator.DataAccess;
     using PatientRegistrator.UI.Data;
     using PatientRegistrator.UI.ViewModel;
 
@@ -12,6 +13,7 @@
         public IContainer Bootstrap()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<CoreContext>().AsSelf();
             builder.RegisterType<MainWindow>().AsSelf();
             builder.RegisterType<MainViewModel>().AsSelf();
             builder.RegisterType<PatientDataService>().As<IPatientDataService>();
