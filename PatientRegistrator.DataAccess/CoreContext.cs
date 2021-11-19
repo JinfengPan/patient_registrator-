@@ -1,41 +1,20 @@
-﻿//namespace PatientRegistrator.DataAccess
-//{
-//    using System.IO;
+﻿namespace PatientRegistrator.DataAccess
+{
+    using Microsoft.EntityFrameworkCore;
 
-//    using Microsoft.EntityFrameworkCore;
+    using PatientRegistrator.Model;
 
-//    using PatientRegistrator.Model;
+    public class CoreContext : DbContext
+    {
+        public DbSet<Patient> Patients { get; set; }
 
-//    public class CoreContext : DbContext
-//    {
-//        public CoreContext(DbContextOptions<CoreContext> options)
-//            : base(options)
-//        {
-//        }
-
-//        public DbSet<Patient> Patients { get; set; }
-
-//        protected override void OnModelCreating(ModelBuilder modelBuilder)
-//        {
-//            base.OnModelCreating(modelBuilder);
-//        }
-
-//        //public CoreContext CreateDbContext(string[] args)
-//        //{
-//        //    var optionsBuilder = new DbContextOptionsBuilder<CoreContext>();
-
-//        //    var configuration = new ConfigurationBuilder()
-//        //        .SetBasePath(Directory.GetCurrentDirectory())
-//        //        .AddJsonFile("appsettings.json")
-//        //        .Build();
-
-//        //    var connectionString = configuration.GetConnectionString("sqlConnection");
-
-//        //    optionsBuilder.UseSqlServer(
-//        //        connectionString,
-//        //        b => b.MigrationsAssembly("Eurofins.Adms.Core.Infrastructure.Entities.Migrations"));
-
-//        //    return new CoreContext(optionsBuilder.Options);
-//        //}
-//    }
-//}
+        protected override void OnConfiguring(
+            DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite(
+                "Data Source=PatientRegistrator.db");
+            optionsBuilder.UseLazyLoadingProxies();
+            base.OnConfiguring(optionsBuilder);
+        }
+    }
+}
