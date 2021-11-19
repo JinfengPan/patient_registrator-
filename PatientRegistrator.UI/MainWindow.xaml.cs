@@ -15,14 +15,27 @@ using System.Windows.Shapes;
 
 namespace PatientRegistrator.UI
 {
+    using PatientRegistrator.UI.ViewModel;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private MainViewModel _viewModel;
+
+        public MainWindow(MainViewModel viewModel)
         {
+            
             InitializeComponent();
+            this._viewModel = viewModel;
+            DataContext = this._viewModel;
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this._viewModel.Load();
         }
     }
 }
