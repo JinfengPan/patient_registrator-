@@ -81,7 +81,15 @@
                                                                     OtherSpecialCheck21 = "检查21",
                                                                     OtherSpecialCheck22 = "检查22",
                                                                     OtherSpecialCheck23 = "检查23",
-
+                                                                    FollowUpHasHeadache = true,
+                                                                    FollowUpHasConvulsion = false,
+                                                                    FollowUpHasHemiplegia = true,
+                                                                    FollowUpOther1 = "随访其他1",
+                                                                    FollowUpOther2 = "随访其他2",
+                                                                    FollowUpOther3 = "随访其他3",
+                                                                    FollowUpOther4 = "随访其他4",
+                                                                    SelfCareDegree = "不能",
+                                                                    FollowUpTime = "7月",
                                                                 },
                                                             new Patient
                                                                 {

@@ -163,8 +163,29 @@ namespace PatientRegistrator.Model
         public string ComplicationOther1 { get; set; }
         public string ComplicationOther2 { get; set; }
 
+        #region Follow up
+
+        public bool FollowUpHasHeadache { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether 抽搐.
+        /// </summary>
+        public bool FollowUpHasConvulsion { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether 偏瘫.
+        /// </summary>
+        public bool FollowUpHasHemiplegia { get; set; }
+        public string FollowUpOther1 { get; set; }
+        public string FollowUpOther2 { get; set; }
+        public string FollowUpOther3 { get; set; }
+        public string FollowUpOther4 { get; set; }
+        public string SelfCareDegree { get; set; }
 
         public string FollowUpTime { get; set; }
+
+        #endregion
+
     }
 
     public enum Gender
