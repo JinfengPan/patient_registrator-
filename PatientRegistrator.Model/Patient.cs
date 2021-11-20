@@ -81,17 +81,36 @@ namespace PatientRegistrator.Model
 
         public int CRP { get; set; }
 
+        public string OtherLaboratoryExam1 { get; set; }
+        public string OtherLaboratoryExam2 { get; set; }
+        public string OtherLaboratoryExam3 { get; set; }
+
+        public string OtherSpecialCheck1 { get; set; }
+
+        public string OtherSpecialCheck2 { get; set; }
+
+        public string OtherSpecialCheck3 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 视力视野.
+        /// </summary>
+        public string Vision { get; set; }
+
+        public string CT { get; set; }
+
+        public string MRI { get; set; }
+
         public bool HasUseDrug { get; set; }
         public string DrugType { get; set; }
-        public string SpecificDrug { get; set; }
+        public string DrugName { get; set; }
 
         public bool HasSurgery { get; set; }
         public string SurgeryMethod { get; set; }
 
-        public bool complicationHeadache { get; set; }
-        public bool complicationInfection { get; set; }
-        public bool complicationConvulsion { get; set; }
-        public bool complicationSecondSurgery { get; set; }
+        public bool ComplicationHeadache { get; set; }
+        public bool ComplicationInfection { get; set; }
+        public bool ComplicationConvulsion { get; set; }
+        public bool ComplicationSecondSurgery { get; set; }
 
         public string FollowUpTime { get; set; }
     }
