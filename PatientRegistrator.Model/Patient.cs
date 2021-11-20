@@ -10,7 +10,6 @@ namespace PatientRegistrator.Model
         public Gender Gender { get; set; }
         public string Hometown { get; set; }
         public string MainSymptom { get; set; }
-        public string OnsetTime { get; set; }
         public string CourseOfDisease { get; set; }
 
         public bool HasHeadache { get; set; }
