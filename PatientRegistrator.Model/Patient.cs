@@ -100,6 +100,54 @@ namespace PatientRegistrator.Model
 
         public string MRI { get; set; }
 
+
+        #region check 2
+
+        /// <summary>
+        /// Gets or sets the 白细胞.
+        /// </summary>
+        public int Leukocyte2 { get; set; }
+
+        public int DDimer2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 白蛋白.
+        /// </summary>
+        public int Albumin2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 降钙素原.
+        /// </summary>
+        public double Procalcitonin2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 血沉.
+        /// </summary>
+        public int ESR2 { get; set; }
+
+        public int CRP2 { get; set; }
+
+        public string OtherLaboratoryExam21 { get; set; }
+        public string OtherLaboratoryExam22 { get; set; }
+        public string OtherLaboratoryExam23 { get; set; }
+
+        public string OtherSpecialCheck21 { get; set; }
+
+        public string OtherSpecialCheck22 { get; set; }
+
+        public string OtherSpecialCheck23 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 视力视野.
+        /// </summary>
+        public string Vision2 { get; set; }
+
+        public string CT2 { get; set; }
+
+        public string MRI2 { get; set; }
+
+        #endregion
+
         public bool HasUseDrug { get; set; }
         public string DrugType { get; set; }
         public string DrugName { get; set; }
@@ -111,6 +159,10 @@ namespace PatientRegistrator.Model
         public bool ComplicationInfection { get; set; }
         public bool ComplicationConvulsion { get; set; }
         public bool ComplicationSecondSurgery { get; set; }
+
+        public string ComplicationOther1 { get; set; }
+        public string ComplicationOther2 { get; set; }
+
 
         public string FollowUpTime { get; set; }
     }
