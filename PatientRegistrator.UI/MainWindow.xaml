@@ -17,11 +17,90 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Button Content="输入新病例" Grid.Row="0"></Button>
             <Button Content="导出数据" Grid.Row="1"></Button>
             <Button Content="展示全部病例" Grid.Row="2"></Button>
             <Button Content="退出" Grid.Row="3"></Button>
+            <ListView Grid.Row="4" x:Name="ListViewPatients" Height="130" Margin="5" ItemsSource="{Binding Patients}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Age}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Gender}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Hometown}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding MainSymptom}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding CourseOfDisease}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasHeadache}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasConvulsion}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasConsciousnessDisorder}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasHemiplegia}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasIncontinence}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasVisionIssue}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasDiabetes}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasHypertension}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasGout}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasEpilepsy}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherAssociatedDisease}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HeadacheDesc}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ConvulsionDesc}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ConsciousnessDisorderDesc}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HemiplegiaDesc}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding IncontinenceDesc}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Leukocyte}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding DDimer}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Albumin}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Procalcitonin}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ESR}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding CRP}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam1}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam3}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Vision}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding CT}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding MRI}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck1}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck3}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasUseDrug}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding DrugType}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding DrugName}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding HasSurgery}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding SurgeryMethod}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ComplicationHeadache}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ComplicationInfection}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ComplicationConvulsion}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ComplicationSecondSurgery}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ComplicationOther1}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ComplicationOther2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Leukocyte2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding DDimer2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Albumin2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Procalcitonin2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding ESR2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding CRP2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam21}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam22}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam23}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Vision2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding CT2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding MRI2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck21}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck22}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck23}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpHasHeadache}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpHasConvulsion}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpHasHemiplegia}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpOther1}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpOther2}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpOther3}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpOther4}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding SelfCareDegree}"/>
+                        <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding FollowUpTime}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
 
     </Grid>
