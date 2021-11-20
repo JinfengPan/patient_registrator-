@@ -12,8 +12,8 @@
 
         public MainViewModel(IPatientDataService patientDataService)
         {
-            this._patientDataService = patientDataService;
             Patients = new ObservableCollection<Patient>();
+            this._patientDataService = patientDataService;
         }
 
         public ObservableCollection<Patient> Patients { get; set; }

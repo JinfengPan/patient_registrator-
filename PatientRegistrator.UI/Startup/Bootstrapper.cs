@@ -16,7 +16,7 @@
             builder.RegisterType<CoreContext>().AsSelf();
             builder.RegisterType<MainWindow>().AsSelf();
             builder.RegisterType<MainViewModel>().AsSelf();
-            builder.RegisterType<PatientDataService>().As<IPatientDataService>();
+            builder.RegisterType<FakeDataService>().As<IPatientDataService>();
 
             return builder.Build();
         }
