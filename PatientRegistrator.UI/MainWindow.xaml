@@ -28,7 +28,7 @@
                     <GridView>
                         <GridViewColumn Header="姓名" Width="60" DisplayMemberBinding="{Binding Name}"/>
                         <GridViewColumn Header="年龄" Width="60" DisplayMemberBinding="{Binding Age}"/>
-                        <GridViewColumn Header="性别" Width="60" DisplayMemberBinding="{Binding Gender}"/>
+                        <GridViewColumn Header="性别" Width="60" DisplayMemberBinding="{Binding Gender, Converter={StaticResource GenderToNanNvConverter}}"/>
                         <GridViewColumn Header="籍贯" Width="60" DisplayMemberBinding="{Binding Hometown}"/>
                         <GridViewColumn Header="主要表现" Width="60" DisplayMemberBinding="{Binding MainSymptom}"/>
                         <GridViewColumn Header="病程" Width="60" DisplayMemberBinding="{Binding CourseOfDisease}"/>
