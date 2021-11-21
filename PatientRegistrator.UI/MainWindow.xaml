@@ -32,7 +32,7 @@
                         <GridViewColumn Header="籍贯" Width="60" DisplayMemberBinding="{Binding Hometown}"/>
                         <GridViewColumn Header="主要表现" Width="60" DisplayMemberBinding="{Binding MainSymptom}"/>
                         <GridViewColumn Header="病程" Width="60" DisplayMemberBinding="{Binding CourseOfDisease}"/>
-                        <GridViewColumn Header="头痛" Width="60" DisplayMemberBinding="{Binding HasHeadache}"/>
+                        <GridViewColumn Header="头痛" Width="60" DisplayMemberBinding="{Binding HasHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
                         <GridViewColumn Header="抽搐" Width="60" DisplayMemberBinding="{Binding HasConvulsion}"/>
                         <GridViewColumn Header="意识障碍" Width="60" DisplayMemberBinding="{Binding HasConsciousnessDisorder}"/>
                         <GridViewColumn Header="肢体偏瘫" Width="60" DisplayMemberBinding="{Binding HasHemiplegia}"/>
