@@ -8,13 +8,11 @@
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
 
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ViewModelBase
     {
         private IPatientDataService _patientDataService;
 
         private Patient _selectedPatient;
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public MainViewModel(IPatientDataService patientDataService)
         {
@@ -48,11 +46,6 @@
                 this._selectedPatient = value;
                 this.OnPropertyChanged();
             }
-        }
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
