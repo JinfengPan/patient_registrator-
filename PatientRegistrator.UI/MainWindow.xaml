@@ -104,8 +104,59 @@
         </Grid>
         <Grid Grid.Column="1">
             <StackPanel>
-                <Label Content="姓名"></Label>
-                <TextBox Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="姓名"></Label>
+                    <TextBox Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="年龄"></Label>
+                    <TextBox Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="性别"></Label>
+                    <TextBox Text="{Binding SelectedPatient.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="籍贯"></Label>
+                    <TextBox Text="{Binding SelectedPatient.Hometown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="主要表现"></Label>
+                    <TextBox Text="{Binding SelectedPatient.MainSymptom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="病程"></Label>
+                    <TextBox Text="{Binding SelectedPatient.CourseOfDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                </StackPanel>
+                <Label Content="存在症状"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="头痛"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasHeadache, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="抽搐"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasConvulsion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="意识障碍"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasConsciousnessDisorder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="肢体偏瘫"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasHemiplegia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="大小便失禁"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasIncontinence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="视力"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasVisionIssue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="既往史"/>
+                    <Label Content="糖尿病"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasDiabetes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="高血压"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasHypertension, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="痛风"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasGout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="羊癫疯"></Label>
+                    <TextBox Text="{Binding SelectedPatient.HasEpilepsy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <Label Content="其他"></Label>
+                    <TextBox Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                </StackPanel>
+                
+
+                
             </StackPanel>
         </Grid>
     </Grid>
