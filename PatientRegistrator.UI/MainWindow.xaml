@@ -23,7 +23,7 @@
             <Button Content="导出数据" Grid.Row="1"></Button>
             <Button Content="展示全部病例" Grid.Row="2"></Button>
             <Button Content="退出" Grid.Row="3"></Button>
-            <ListView Grid.Row="4" x:Name="ListViewPatients" Height="130" Margin="5" ItemsSource="{Binding Patients}">
+            <ListView Grid.Row="4" x:Name="ListViewPatients" Height="130" Margin="5" ItemsSource="{Binding Patients}" SelectedItem="{Binding SelectedPatient, Mode=TwoWay}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="姓名" Width="60" DisplayMemberBinding="{Binding Name}"/>
@@ -102,7 +102,12 @@
                 </ListView.View>
             </ListView>
         </Grid>
-
+        <Grid Grid.Column="1">
+            <StackPanel>
+                <Label Content="姓名"></Label>
+                <TextBox Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            </StackPanel>
+        </Grid>
     </Grid>
 
 </Window>
