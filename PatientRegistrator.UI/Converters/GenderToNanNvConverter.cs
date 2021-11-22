@@ -10,9 +10,14 @@
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Gender val = (Gender)value;
+            Gender? val = (Gender?)value;
 
-            return val == Gender.Male ? "男" : "女";
+            if (val.HasValue)
+            {
+                return val.Value == Gender.Male ? "男" : "女";
+            }
+
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
