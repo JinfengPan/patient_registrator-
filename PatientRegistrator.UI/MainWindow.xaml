@@ -24,80 +24,86 @@
             </Grid.ColumnDefinitions>
 
             <ListView Grid.Column="0" x:Name="ListViewPatients" Margin="5" ItemsSource="{Binding Patients}" SelectedItem="{Binding SelectedPatient, Mode=TwoWay}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="BorderBrush" Value="LightGray" />
+                        <Setter Property="BorderThickness" Value="0,0,0,1" />
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="姓名" Width="60" DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="年龄" Width="60" DisplayMemberBinding="{Binding Age}"/>
-                        <GridViewColumn Header="性别" Width="60" DisplayMemberBinding="{Binding Gender, Converter={StaticResource GenderToNanNvConverter}}"/>
-                        <GridViewColumn Header="籍贯" Width="60" DisplayMemberBinding="{Binding Hometown}"/>
-                        <GridViewColumn Header="主要表现" Width="60" DisplayMemberBinding="{Binding MainSymptom}"/>
-                        <GridViewColumn Header="病程" Width="60" DisplayMemberBinding="{Binding CourseOfDisease}"/>
-                        <GridViewColumn Header="头痛" Width="60" DisplayMemberBinding="{Binding HasHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="抽搐" Width="60" DisplayMemberBinding="{Binding HasConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="意识障碍" Width="60" DisplayMemberBinding="{Binding HasConsciousnessDisorder, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="肢体偏瘫" Width="60" DisplayMemberBinding="{Binding HasHemiplegia, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="大小便失禁" Width="60" DisplayMemberBinding="{Binding HasIncontinence, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="视力" Width="60" DisplayMemberBinding="{Binding HasVisionIssue, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="糖尿病" Width="60" DisplayMemberBinding="{Binding HasDiabetes, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="高血压" Width="60" DisplayMemberBinding="{Binding HasHypertension, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="痛风" Width="60" DisplayMemberBinding="{Binding HasGout, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="羊癫疯" Width="60" DisplayMemberBinding="{Binding HasEpilepsy, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="其他1" Width="60" DisplayMemberBinding="{Binding OtherAssociatedDisease}"/>
-                        <GridViewColumn Header="头痛" Width="60" DisplayMemberBinding="{Binding HeadacheDesc}"/>
-                        <GridViewColumn Header="抽搐" Width="60" DisplayMemberBinding="{Binding ConvulsionDesc}"/>
-                        <GridViewColumn Header="意识障碍" Width="60" DisplayMemberBinding="{Binding ConsciousnessDisorderDesc}"/>
-                        <GridViewColumn Header="肢体偏瘫" Width="60" DisplayMemberBinding="{Binding HemiplegiaDesc}"/>
-                        <GridViewColumn Header="大小便失禁" Width="60" DisplayMemberBinding="{Binding IncontinenceDesc}"/>
-                        <GridViewColumn Header="白细胞" Width="60" DisplayMemberBinding="{Binding Leukocyte}"/>
-                        <GridViewColumn Header="D-二聚体" Width="60" DisplayMemberBinding="{Binding DDimer}"/>
-                        <GridViewColumn Header="白蛋白" Width="60" DisplayMemberBinding="{Binding Albumin}"/>
-                        <GridViewColumn Header="降钙素原" Width="60" DisplayMemberBinding="{Binding Procalcitonin}"/>
-                        <GridViewColumn Header="血沉" Width="60" DisplayMemberBinding="{Binding ESR}"/>
-                        <GridViewColumn Header="CRP" Width="60" DisplayMemberBinding="{Binding CRP}"/>
-                        <GridViewColumn Header="其他特殊检查1" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam1}"/>
-                        <GridViewColumn Header="其他特殊检查2" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam2}"/>
-                        <GridViewColumn Header="其他特殊检查3" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam3}"/>
-                        <GridViewColumn Header="视力视野" Width="60" DisplayMemberBinding="{Binding Vision}"/>
-                        <GridViewColumn Header="CT" Width="60" DisplayMemberBinding="{Binding CT}"/>
-                        <GridViewColumn Header="MRI" Width="60" DisplayMemberBinding="{Binding MRI}"/>
-                        <GridViewColumn Header="其他特殊检查4" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck1}"/>
-                        <GridViewColumn Header="其他特殊检查5" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck2}"/>
-                        <GridViewColumn Header="其他特殊检查6" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck3}"/>
-                        <GridViewColumn Header="是否采用药物" Width="60" DisplayMemberBinding="{Binding HasUseDrug, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="药物类型" Width="60" DisplayMemberBinding="{Binding DrugType}"/>
-                        <GridViewColumn Header="具体的药物" Width="60" DisplayMemberBinding="{Binding DrugName}"/>
-                        <GridViewColumn Header="是否采用手术" Width="60" DisplayMemberBinding="{Binding HasSurgery, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="手术方式" Width="60" DisplayMemberBinding="{Binding SurgeryMethod}"/>
-                        <GridViewColumn Header="头痛" Width="60" DisplayMemberBinding="{Binding ComplicationHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="感染" Width="60" DisplayMemberBinding="{Binding ComplicationInfection, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="抽搐" Width="60" DisplayMemberBinding="{Binding ComplicationConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="二次手术" Width="60" DisplayMemberBinding="{Binding ComplicationSecondSurgery, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="其他2" Width="60" DisplayMemberBinding="{Binding ComplicationOther1}"/>
-                        <GridViewColumn Header="其他3" Width="60" DisplayMemberBinding="{Binding ComplicationOther2}"/>
-                        <GridViewColumn Header="白细胞" Width="60" DisplayMemberBinding="{Binding Leukocyte2}"/>
-                        <GridViewColumn Header="D-二聚体" Width="60" DisplayMemberBinding="{Binding DDimer2}"/>
-                        <GridViewColumn Header="白蛋白" Width="60" DisplayMemberBinding="{Binding Albumin2}"/>
-                        <GridViewColumn Header="降钙素原" Width="60" DisplayMemberBinding="{Binding Procalcitonin2}"/>
-                        <GridViewColumn Header="血沉" Width="60" DisplayMemberBinding="{Binding ESR2}"/>
-                        <GridViewColumn Header="CRP" Width="60" DisplayMemberBinding="{Binding CRP2}"/>
-                        <GridViewColumn Header="其他特殊检查7" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam21}"/>
-                        <GridViewColumn Header="其他特殊检查8" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam22}"/>
-                        <GridViewColumn Header="其他特殊检查9" Width="60" DisplayMemberBinding="{Binding OtherLaboratoryExam23}"/>
-                        <GridViewColumn Header="视力视野" Width="60" DisplayMemberBinding="{Binding Vision2}"/>
-                        <GridViewColumn Header="CT" Width="60" DisplayMemberBinding="{Binding CT2}"/>
-                        <GridViewColumn Header="MRI" Width="60" DisplayMemberBinding="{Binding MRI2}"/>
-                        <GridViewColumn Header="其他特殊检查10" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck21}"/>
-                        <GridViewColumn Header="其他特殊检查11" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck22}"/>
-                        <GridViewColumn Header="其他特殊检查12" Width="60" DisplayMemberBinding="{Binding OtherSpecialCheck23}"/>
-                        <GridViewColumn Header="头痛" Width="60" DisplayMemberBinding="{Binding FollowUpHasHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="抽搐" Width="60" DisplayMemberBinding="{Binding FollowUpHasConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="偏瘫" Width="60" DisplayMemberBinding="{Binding FollowUpHasHemiplegia, Converter={StaticResource BooleanToShiFouConverter}}"/>
-                        <GridViewColumn Header="其他4" Width="60" DisplayMemberBinding="{Binding FollowUpOther1}"/>
-                        <GridViewColumn Header="其他5" Width="60" DisplayMemberBinding="{Binding FollowUpOther2}"/>
-                        <GridViewColumn Header="其他6" Width="60" DisplayMemberBinding="{Binding FollowUpOther3}"/>
-                        <GridViewColumn Header="其他7" Width="60" DisplayMemberBinding="{Binding FollowUpOther4}"/>
-                        <GridViewColumn Header="生活自理程度" Width="60" DisplayMemberBinding="{Binding SelfCareDegree}"/>
-                        <GridViewColumn Header="随访时间" Width="60" DisplayMemberBinding="{Binding FollowUpTime}"/>
+                        <GridViewColumn Header="姓名" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="年龄" DisplayMemberBinding="{Binding Age}"/>
+                        <GridViewColumn Header="性别" DisplayMemberBinding="{Binding Gender, Converter={StaticResource GenderToNanNvConverter}}"/>
+                        <GridViewColumn Header="籍贯" DisplayMemberBinding="{Binding Hometown}"/>
+                        <GridViewColumn Header="主要表现" DisplayMemberBinding="{Binding MainSymptom}"/>
+                        <GridViewColumn Header="病程" DisplayMemberBinding="{Binding CourseOfDisease}"/>
+                        <GridViewColumn Header="头痛" DisplayMemberBinding="{Binding HasHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="抽搐" DisplayMemberBinding="{Binding HasConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="意识障碍" DisplayMemberBinding="{Binding HasConsciousnessDisorder, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="肢体偏瘫" DisplayMemberBinding="{Binding HasHemiplegia, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="大小便失禁" DisplayMemberBinding="{Binding HasIncontinence, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="视力" DisplayMemberBinding="{Binding HasVisionIssue, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="糖尿病" DisplayMemberBinding="{Binding HasDiabetes, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="高血压" DisplayMemberBinding="{Binding HasHypertension, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="痛风" DisplayMemberBinding="{Binding HasGout, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="羊癫疯" DisplayMemberBinding="{Binding HasEpilepsy, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="其他1" DisplayMemberBinding="{Binding OtherAssociatedDisease}"/>
+                        <GridViewColumn Header="头痛" DisplayMemberBinding="{Binding HeadacheDesc}"/>
+                        <GridViewColumn Header="抽搐" DisplayMemberBinding="{Binding ConvulsionDesc}"/>
+                        <GridViewColumn Header="意识障碍" DisplayMemberBinding="{Binding ConsciousnessDisorderDesc}"/>
+                        <GridViewColumn Header="肢体偏瘫" DisplayMemberBinding="{Binding HemiplegiaDesc}"/>
+                        <GridViewColumn Header="大小便失禁" DisplayMemberBinding="{Binding IncontinenceDesc}"/>
+                        <GridViewColumn Header="白细胞" DisplayMemberBinding="{Binding Leukocyte}"/>
+                        <GridViewColumn Header="D-二聚体" DisplayMemberBinding="{Binding DDimer}"/>
+                        <GridViewColumn Header="白蛋白" DisplayMemberBinding="{Binding Albumin}"/>
+                        <GridViewColumn Header="降钙素原" DisplayMemberBinding="{Binding Procalcitonin}"/>
+                        <GridViewColumn Header="血沉" DisplayMemberBinding="{Binding ESR}"/>
+                        <GridViewColumn Header="CRP" DisplayMemberBinding="{Binding CRP}"/>
+                        <GridViewColumn Header="其他特殊检查1" DisplayMemberBinding="{Binding OtherLaboratoryExam1}"/>
+                        <GridViewColumn Header="其他特殊检查2" DisplayMemberBinding="{Binding OtherLaboratoryExam2}"/>
+                        <GridViewColumn Header="其他特殊检查3" DisplayMemberBinding="{Binding OtherLaboratoryExam3}"/>
+                        <GridViewColumn Header="视力视野" DisplayMemberBinding="{Binding Vision}"/>
+                        <GridViewColumn Header="CT" DisplayMemberBinding="{Binding CT}"/>
+                        <GridViewColumn Header="MRI" DisplayMemberBinding="{Binding MRI}"/>
+                        <GridViewColumn Header="其他特殊检查4" DisplayMemberBinding="{Binding OtherSpecialCheck1}"/>
+                        <GridViewColumn Header="其他特殊检查5" DisplayMemberBinding="{Binding OtherSpecialCheck2}"/>
+                        <GridViewColumn Header="其他特殊检查6" DisplayMemberBinding="{Binding OtherSpecialCheck3}"/>
+                        <GridViewColumn Header="是否采用药物" DisplayMemberBinding="{Binding HasUseDrug, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="药物类型" DisplayMemberBinding="{Binding DrugType}"/>
+                        <GridViewColumn Header="具体的药物" DisplayMemberBinding="{Binding DrugName}"/>
+                        <GridViewColumn Header="是否采用手术" DisplayMemberBinding="{Binding HasSurgery, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="手术方式" DisplayMemberBinding="{Binding SurgeryMethod}"/>
+                        <GridViewColumn Header="头痛" DisplayMemberBinding="{Binding ComplicationHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="感染" DisplayMemberBinding="{Binding ComplicationInfection, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="抽搐" DisplayMemberBinding="{Binding ComplicationConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="二次手术" DisplayMemberBinding="{Binding ComplicationSecondSurgery, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="其他2" DisplayMemberBinding="{Binding ComplicationOther1}"/>
+                        <GridViewColumn Header="其他3" DisplayMemberBinding="{Binding ComplicationOther2}"/>
+                        <GridViewColumn Header="白细胞" DisplayMemberBinding="{Binding Leukocyte2}"/>
+                        <GridViewColumn Header="D-二聚体" DisplayMemberBinding="{Binding DDimer2}"/>
+                        <GridViewColumn Header="白蛋白" DisplayMemberBinding="{Binding Albumin2}"/>
+                        <GridViewColumn Header="降钙素原" DisplayMemberBinding="{Binding Procalcitonin2}"/>
+                        <GridViewColumn Header="血沉" DisplayMemberBinding="{Binding ESR2}"/>
+                        <GridViewColumn Header="CRP" DisplayMemberBinding="{Binding CRP2}"/>
+                        <GridViewColumn Header="其他特殊检查7" DisplayMemberBinding="{Binding OtherLaboratoryExam21}"/>
+                        <GridViewColumn Header="其他特殊检查8" DisplayMemberBinding="{Binding OtherLaboratoryExam22}"/>
+                        <GridViewColumn Header="其他特殊检查9" DisplayMemberBinding="{Binding OtherLaboratoryExam23}"/>
+                        <GridViewColumn Header="视力视野" DisplayMemberBinding="{Binding Vision2}"/>
+                        <GridViewColumn Header="CT" DisplayMemberBinding="{Binding CT2}"/>
+                        <GridViewColumn Header="MRI" DisplayMemberBinding="{Binding MRI2}"/>
+                        <GridViewColumn Header="其他特殊检查10" DisplayMemberBinding="{Binding OtherSpecialCheck21}"/>
+                        <GridViewColumn Header="其他特殊检查11" DisplayMemberBinding="{Binding OtherSpecialCheck22}"/>
+                        <GridViewColumn Header="其他特殊检查12" DisplayMemberBinding="{Binding OtherSpecialCheck23}"/>
+                        <GridViewColumn Header="头痛" DisplayMemberBinding="{Binding FollowUpHasHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="抽搐" DisplayMemberBinding="{Binding FollowUpHasConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="偏瘫" DisplayMemberBinding="{Binding FollowUpHasHemiplegia, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="其他4" DisplayMemberBinding="{Binding FollowUpOther1}"/>
+                        <GridViewColumn Header="其他5" DisplayMemberBinding="{Binding FollowUpOther2}"/>
+                        <GridViewColumn Header="其他6" DisplayMemberBinding="{Binding FollowUpOther3}"/>
+                        <GridViewColumn Header="其他7" DisplayMemberBinding="{Binding FollowUpOther4}"/>
+                        <GridViewColumn Header="生活自理程度" DisplayMemberBinding="{Binding SelfCareDegree}"/>
+                        <GridViewColumn Header="随访时间" DisplayMemberBinding="{Binding FollowUpTime}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
