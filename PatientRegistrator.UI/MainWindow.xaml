@@ -109,7 +109,10 @@
                     <Label Content="年龄"></Label>
                     <TextBox Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     <Label Content="性别"></Label>
-                    <TextBox Text="{Binding SelectedPatient.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <ComboBox Width="40" ItemsSource="{Binding GenderDropdowns, Mode=OneWay}" 
+                              DisplayMemberPath="GenderDisplay" 
+                              SelectedValuePath="Gender"
+                              SelectedValue="{Binding SelectedPatient.Gender, Mode=TwoWay}"/>
                     <Label Content="籍贯"></Label>
                     <TextBox Text="{Binding SelectedPatient.Hometown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                 </StackPanel>
