@@ -6,7 +6,7 @@ namespace PatientRegistrator.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Age { get; set; }
+        public int? Age { get; set; }
         public Gender Gender { get; set; }
         public string Hometown { get; set; }
         public string MainSymptom { get; set; }
@@ -59,14 +59,14 @@ namespace PatientRegistrator.Model
         /// <summary>
         /// Gets or sets the 白细胞.
         /// </summary>
-        public int Leukocyte { get; set; }
+        public int? Leukocyte { get; set; }
 
-        public int DDimer { get; set; }
+        public int? DDimer { get; set; }
 
         /// <summary>
         /// Gets or sets the 白蛋白.
         /// </summary>
-        public int Albumin { get; set; }
+        public int? Albumin { get; set; }
 
         /// <summary>
         /// Gets or sets the 降钙素原.
@@ -76,9 +76,9 @@ namespace PatientRegistrator.Model
         /// <summary>
         /// Gets or sets the 血沉.
         /// </summary>
-        public int ESR { get; set; }
+        public int? ESR { get; set; }
 
-        public int CRP { get; set; }
+        public int? CRP { get; set; }
 
         public string OtherLaboratoryExam1 { get; set; }
         public string OtherLaboratoryExam2 { get; set; }
@@ -105,14 +105,14 @@ namespace PatientRegistrator.Model
         /// <summary>
         /// Gets or sets the 白细胞.
         /// </summary>
-        public int Leukocyte2 { get; set; }
+        public int? Leukocyte2 { get; set; }
 
-        public int DDimer2 { get; set; }
+        public int? DDimer2 { get; set; }
 
         /// <summary>
         /// Gets or sets the 白蛋白.
         /// </summary>
-        public int Albumin2 { get; set; }
+        public int? Albumin2 { get; set; }
 
         /// <summary>
         /// Gets or sets the 降钙素原.
@@ -122,9 +122,9 @@ namespace PatientRegistrator.Model
         /// <summary>
         /// Gets or sets the 血沉.
         /// </summary>
-        public int ESR2 { get; set; }
+        public int? ESR2 { get; set; }
 
-        public int CRP2 { get; set; }
+        public int? CRP2 { get; set; }
 
         public string OtherLaboratoryExam21 { get; set; }
         public string OtherLaboratoryExam22 { get; set; }
