@@ -22,8 +22,11 @@
 
         public ObservableCollection<Patient> Patients { get; set; }
 
+        public ObservableCollection<GenderDropdown> GenderDropdowns { get; set; } = GenderDropdown.GenderDropdowns;
+
         public async Task LoadAsync()
         {
+
             var patients = await this._patientDataService.GetAllAsync();
 
             Patients.Clear();
@@ -47,5 +50,27 @@
                 this.OnPropertyChanged();
             }
         }
+
+    }
+
+    public class GenderDropdown
+    {
+        public Gender Gender { get; set; }
+        public string GenderDisplay { get; set; }
+
+        public static ObservableCollection<GenderDropdown> GenderDropdowns = 
+            new ObservableCollection<GenderDropdown>
+             {
+                new GenderDropdown
+                    {
+                        Gender = Gender.Male,
+                        GenderDisplay = "男"
+                    },
+                new GenderDropdown
+                    {
+                        Gender = Gender.Femail,
+                        GenderDisplay = "女"
+                    },
+             };
     }
 }
