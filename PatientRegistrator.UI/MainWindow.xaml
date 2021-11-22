@@ -102,95 +102,124 @@
                 </ListView.View>
             </ListView>
             
-            <!-- Form 1 -->
-            <StackPanel Grid.Column="1" >
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="姓名"></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
-                    <Label Content="年龄" Margin="20 0 0 0 "></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
-                    <Label Content="性别" Margin="20 0 0 0 " />
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding GenderDropdowns, Mode=OneWay}" 
+            
+            <StackPanel Grid.Column="1">
+                <!-- Form 1 -->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="姓名"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <Label Content="年龄" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
+                        <Label Content="性别" Margin="20 0 0 0 " />
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding GenderDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="GenderDisplay" 
                               SelectedValuePath="Gender"
                               SelectedValue="{Binding SelectedPatient.Gender, Mode=TwoWay}"/>
-                    <Label Content="籍贯" Margin="20 0 0 0 "></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Hometown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
-                </StackPanel>
+                        <Label Content="籍贯" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Hometown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-                    <Label Content="主要表现"></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.MainSymptom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="主要表现"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.MainSymptom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-                    <Label Content="病程"></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CourseOfDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
-                </StackPanel>
-                <Label Content="存在症状：" Margin="0 20 0 0"/>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="       头痛"></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="病程"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CourseOfDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    </StackPanel>
+                    <Label Content="存在症状：" Margin="0 20 0 0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="       头痛"></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHeadache, Mode=TwoWay}"/>
-                    <Label Content="           抽搐" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content="           抽搐" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasConvulsion, Mode=TwoWay}"/>
-                    <Label Content="意识障碍" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content="意识障碍" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasConsciousnessDisorder, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-                    <Label Content="肢体偏瘫"></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="肢体偏瘫"></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHemiplegia, Mode=TwoWay}"/>
-                    <Label Content="大小便失禁" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content="大小便失禁" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasIncontinence, Mode=TwoWay}"/>
-                    <Label Content="       视力" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content="       视力" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasVisionIssue, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                    <Label Content="既往史："/>
-                    <Label Content="糖尿病"></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
+                        <Label Content="既往史："/>
+                        <Label Content="糖尿病"></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasDiabetes, Mode=TwoWay}"/>
-                    <Label Content="高血压" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content="高血压" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHypertension, Mode=TwoWay}"/>
-                    <Label Content=" 痛风" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content=" 痛风" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasGout, Mode=TwoWay}"/>
-                    <Label Content="羊癫疯" Margin="20 0 0 0 "></Label>
-                    <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                        <Label Content="羊癫疯" Margin="20 0 0 0 "></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasEpilepsy, Mode=TwoWay}"/>
-                    <Label Content="其他" Margin="20 0 0 0 "></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <Label Content="其他" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    </StackPanel>
+
+                    <Button Content="保存" Margin="10 10 10 30" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+
                 </StackPanel>
 
-                <Button Content="保存" Margin="10 10 10 30" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
-
+                <!-- Form 2 -->
+                <StackPanel Margin="0 20 0 0">
+                    <Label Content="情况描述："/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="          头痛"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.HeadacheDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="          抽搐"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.ConvulsionDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="   意识障碍"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.ConsciousnessDisorderDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="   肢体偏瘫"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.HemiplegiaDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="大小便失禁"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.IncontinenceDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
+            
         </Grid>
     </Grid>
 
