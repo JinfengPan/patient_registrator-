@@ -7,5 +7,6 @@
     <Application.Resources>
         <converters:BooleanToShiFouConverter x:Key="BooleanToShiFouConverter"/>
         <converters:GenderToNanNvConverter x:Key="GenderToNanNvConverter"/>
+        <converters:StringToNullableIntConverter x:Key="StringToNullableIntConverter" />
     </Application.Resources>
 </Application>
