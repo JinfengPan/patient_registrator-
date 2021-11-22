@@ -102,6 +102,7 @@
                 </ListView.View>
             </ListView>
             
+            <!-- Form 1 -->
             <StackPanel Grid.Column="1" >
                 <StackPanel Orientation="Horizontal">
                     <Label Content="姓名"></Label>
@@ -128,12 +129,12 @@
                 </StackPanel>
                 <Label Content="存在症状：" Margin="0 20 0 0"/>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="头痛"></Label>
+                    <Label Content="       头痛"></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHeadache, Mode=TwoWay}"/>
-                    <Label Content="抽搐" Margin="10 0 0 0"></Label>
+                    <Label Content="           抽搐" Margin="10 0 0 0"></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
@@ -155,7 +156,7 @@
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasIncontinence, Mode=TwoWay}"/>
-                    <Label Content="视力" Margin="10 0 0 0"></Label>
+                    <Label Content="       视力" Margin="10 0 0 0"></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
@@ -173,7 +174,7 @@
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHypertension, Mode=TwoWay}"/>
-                    <Label Content="痛风" Margin="10 0 0 0"></Label>
+                    <Label Content=" 痛风" Margin="10 0 0 0"></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
