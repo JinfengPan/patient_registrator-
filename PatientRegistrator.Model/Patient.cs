@@ -7,42 +7,42 @@ namespace PatientRegistrator.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public int? Age { get; set; }
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
         public string Hometown { get; set; }
         public string MainSymptom { get; set; }
         public string CourseOfDisease { get; set; }
 
-        public bool HasHeadache { get; set; }
+        public bool? HasHeadache { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 抽搐.
         /// </summary>
-        public bool HasConvulsion { get; set; }
+        public bool? HasConvulsion { get; set; }
 
-        public bool HasConsciousnessDisorder { get; set; }
+        public bool? HasConsciousnessDisorder { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 偏瘫.
         /// </summary>
-        public bool HasHemiplegia { get; set; }
+        public bool? HasHemiplegia { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 失禁.
         /// </summary>
-        public bool HasIncontinence { get; set; }
-        public bool HasVisionIssue { get; set; }
-        public bool HasDiabetes { get; set; }
-        public bool HasHypertension { get; set; }
+        public bool? HasIncontinence { get; set; }
+        public bool? HasVisionIssue { get; set; }
+        public bool? HasDiabetes { get; set; }
+        public bool? HasHypertension { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 痛风.
         /// </summary>
-        public bool HasGout { get; set; }
+        public bool? HasGout { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 癫痫.
         /// </summary>
-        public bool HasEpilepsy { get; set; } 
+        public bool? HasEpilepsy { get; set; } 
 
         public string OtherAssociatedDisease { get; set; }
 
@@ -147,34 +147,34 @@ namespace PatientRegistrator.Model
 
         #endregion
 
-        public bool HasUseDrug { get; set; }
+        public bool? HasUseDrug { get; set; }
         public string DrugType { get; set; }
         public string DrugName { get; set; }
 
-        public bool HasSurgery { get; set; }
+        public bool? HasSurgery { get; set; }
         public string SurgeryMethod { get; set; }
 
-        public bool ComplicationHeadache { get; set; }
-        public bool ComplicationInfection { get; set; }
-        public bool ComplicationConvulsion { get; set; }
-        public bool ComplicationSecondSurgery { get; set; }
+        public bool? ComplicationHeadache { get; set; }
+        public bool? ComplicationInfection { get; set; }
+        public bool? ComplicationConvulsion { get; set; }
+        public bool? ComplicationSecondSurgery { get; set; }
 
         public string ComplicationOther1 { get; set; }
         public string ComplicationOther2 { get; set; }
 
         #region Follow up
 
-        public bool FollowUpHasHeadache { get; set; }
+        public bool? FollowUpHasHeadache { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 抽搐.
         /// </summary>
-        public bool FollowUpHasConvulsion { get; set; }
+        public bool? FollowUpHasConvulsion { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether 偏瘫.
         /// </summary>
-        public bool FollowUpHasHemiplegia { get; set; }
+        public bool? FollowUpHasHemiplegia { get; set; }
         public string FollowUpOther1 { get; set; }
         public string FollowUpOther2 { get; set; }
         public string FollowUpOther3 { get; set; }
