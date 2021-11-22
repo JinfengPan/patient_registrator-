@@ -110,7 +110,7 @@
                         <Label Content="姓名"></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                         <Label Content="年龄" Margin="20 0 0 0 "></Label>
-                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="40"/>
                         <Label Content="性别" Margin="20 0 0 0 " />
                         <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding GenderDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="GenderDisplay" 
