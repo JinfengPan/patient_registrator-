@@ -24,6 +24,8 @@
 
         public ObservableCollection<GenderDropdown> GenderDropdowns { get; set; } = GenderDropdown.GenderDropdowns;
 
+        public ObservableCollection<ShiFouDropdown> ShiFouDropdowns { get; set; } = ShiFouDropdown.ShiFouDropdowns;
+
         public async Task LoadAsync()
         {
 
@@ -72,5 +74,26 @@
                         GenderDisplay = "女"
                     },
              };
+    }
+
+    public class ShiFouDropdown
+    {
+        public bool Value { get; set; }
+        public string Display { get; set; }
+
+        public static ObservableCollection<ShiFouDropdown> ShiFouDropdowns =
+            new ObservableCollection<ShiFouDropdown>
+                {
+                    new ShiFouDropdown
+                        {
+                           Value = true,
+                           Display = "是"
+                        },
+                    new ShiFouDropdown
+                        {
+                            Value = false,
+                            Display = "否"
+                        },
+                };
     }
 }
