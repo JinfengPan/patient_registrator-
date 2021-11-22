@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PatientRegistrator.UI"
         mc:Ignorable="d"
-        Title="慢性硬膜下血肿患者资料登记汇总系统" Height="450" Width="800">
+        Title="慢性硬膜下血肿患者资料登记汇总系统" Height="600" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Button Content="输入新病例" Grid.Row="0"></Button>
-            <Button Content="导出数据" Grid.Row="1"></Button>
-            <Button Content="展示全部病例" Grid.Row="2"></Button>
-            <Button Content="退出" Grid.Row="3"></Button>
-            <ListView Grid.Row="4" x:Name="ListViewPatients" Height="130" Margin="5" ItemsSource="{Binding Patients}" SelectedItem="{Binding SelectedPatient, Mode=TwoWay}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Content="输入新病例" Margin="10"></Button>
+            <Button Content="导出数据" Margin="10"></Button>
+            <Button Content="展示全部病例" Margin="10"></Button>
+            <Button Content="退出" Margin="10"></Button>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <ListView Grid.Column="0" x:Name="ListViewPatients" Margin="5" ItemsSource="{Binding Patients}" SelectedItem="{Binding SelectedPatient, Mode=TwoWay}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="姓名" Width="60" DisplayMemberBinding="{Binding Name}"/>
@@ -101,13 +101,8 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <StackPanel>
+            
+            <StackPanel Grid.Column="1" >
                 <StackPanel Orientation="Horizontal">
                     <Label Content="姓名"></Label>
                     <TextBox Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
@@ -158,11 +153,10 @@
                     <Label Content="其他"></Label>
                     <TextBox Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                 </StackPanel>
-                
 
-                
+                <Button Content="保存" Margin="10 10 10 30" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+
             </StackPanel>
-            <Button Grid.Row="1" Content="保存" Margin="10 10 10 30" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
         </Grid>
     </Grid>
 
