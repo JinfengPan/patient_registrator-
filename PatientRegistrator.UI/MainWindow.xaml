@@ -107,23 +107,23 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="姓名"></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
-                    <Label Content="年龄" Margin="10 0 0 0"></Label>
+                    <Label Content="年龄" Margin="20 0 0 0 "></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
-                    <Label Content="性别" Margin="10 0 0 0" />
+                    <Label Content="性别" Margin="20 0 0 0 " />
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding GenderDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="GenderDisplay" 
                               SelectedValuePath="Gender"
                               SelectedValue="{Binding SelectedPatient.Gender, Mode=TwoWay}"/>
-                    <Label Content="籍贯" Margin="10 0 0 0"></Label>
+                    <Label Content="籍贯" Margin="20 0 0 0 "></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Hometown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label Content="主要表现"></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.MainSymptom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label Content="病程"></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CourseOfDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                 </StackPanel>
@@ -134,57 +134,57 @@
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHeadache, Mode=TwoWay}"/>
-                    <Label Content="           抽搐" Margin="10 0 0 0"></Label>
+                    <Label Content="           抽搐" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasConvulsion, Mode=TwoWay}"/>
-                    <Label Content="意识障碍" Margin="10 0 0 0"></Label>
+                    <Label Content="意识障碍" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasConsciousnessDisorder, Mode=TwoWay}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label Content="肢体偏瘫"></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHemiplegia, Mode=TwoWay}"/>
-                    <Label Content="大小便失禁" Margin="10 0 0 0"></Label>
+                    <Label Content="大小便失禁" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasIncontinence, Mode=TwoWay}"/>
-                    <Label Content="       视力" Margin="10 0 0 0"></Label>
+                    <Label Content="       视力" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasVisionIssue, Mode=TwoWay}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
                     <Label Content="既往史："/>
                     <Label Content="糖尿病"></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasDiabetes, Mode=TwoWay}"/>
-                    <Label Content="高血压" Margin="10 0 0 0"></Label>
+                    <Label Content="高血压" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasHypertension, Mode=TwoWay}"/>
-                    <Label Content=" 痛风" Margin="10 0 0 0"></Label>
+                    <Label Content=" 痛风" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasGout, Mode=TwoWay}"/>
-                    <Label Content="羊癫疯" Margin="10 0 0 0"></Label>
+                    <Label Content="羊癫疯" Margin="20 0 0 0 "></Label>
                     <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="Display" 
                               SelectedValuePath="Value"
                               SelectedValue="{Binding SelectedPatient.HasEpilepsy, Mode=TwoWay}"/>
-                    <Label Content="其他" Margin="10 0 0 0"></Label>
+                    <Label Content="其他" Margin="20 0 0 0 "></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                 </StackPanel>
 
