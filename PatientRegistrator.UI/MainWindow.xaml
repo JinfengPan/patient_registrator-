@@ -107,7 +107,7 @@
                     <Label Content="姓名"></Label>
                     <TextBox Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     <Label Content="年龄" Margin="10 0 0 0"></Label>
-                    <TextBox Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <TextBox Text="{Binding SelectedPatient.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
                     <Label Content="性别" Margin="10 0 0 0" />
                     <ComboBox Width="60" ItemsSource="{Binding GenderDropdowns, Mode=OneWay}" 
                               DisplayMemberPath="GenderDisplay" 
@@ -119,7 +119,7 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                     <Label Content="主要表现"></Label>
-                    <TextBox Text="{Binding SelectedPatient.MainSymptom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    <TextBox Text="{Binding SelectedPatient.MainSymptom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
