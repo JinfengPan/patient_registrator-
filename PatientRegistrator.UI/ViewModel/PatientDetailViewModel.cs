@@ -8,7 +8,7 @@
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
 
-    public class PatientDetailViewModel : ViewModelBase
+    public class PatientDetailViewModel : ViewModelBase, IPatientDetailViewModel
     {
         private IPatientDataService _patientDataService;
 
