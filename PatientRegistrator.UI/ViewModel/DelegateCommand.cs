@@ -10,7 +10,7 @@
 
         private Func<bool> _canExecute;
 
-        public DelegateCommand(Action execute, Func<bool> canExecute)
+        public DelegateCommand(Action execute, Func<bool> canExecute = null)
         {
             this._execute = execute ?? throw new ArgumentNullException(nameof(execute));
             this._canExecute = canExecute;

@@ -18,6 +18,9 @@
         {
             Patients = new ObservableCollection<Patient>();
             this._patientDataService = patientDataService;
+            this.IncreaseFormIndexCommand = new DelegateCommand(this.IncreaseFormIndex);
+            this.DecreaseFormIndexCommand = new DelegateCommand(this.DecreaseFormIndex);
+            this.SavePatientCommand = new DelegateCommand(this.Save);
         }
 
         public ObservableCollection<Patient> Patients { get; set; }
@@ -25,6 +28,12 @@
         public ObservableCollection<GenderDropdown> GenderDropdowns { get; set; } = GenderDropdown.GenderDropdowns;
 
         public ObservableCollection<ShiFouDropdown> ShiFouDropdowns { get; set; } = ShiFouDropdown.ShiFouDropdowns;
+
+        public DelegateCommand IncreaseFormIndexCommand { get; }
+        public DelegateCommand DecreaseFormIndexCommand { get; }
+        public DelegateCommand SavePatientCommand { get; }
+
+        #region Db operations
 
         public async Task LoadAsync()
         {
@@ -38,6 +47,13 @@
                 Patients.Add(patient);
             }
         }
+
+        public void Save()
+        {
+            this._patientDataService.Save(this._selectedPatient);
+        }
+
+        #endregion
 
         public Patient SelectedPatient
         {
