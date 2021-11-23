@@ -13,6 +13,8 @@ using System.Windows.Shapes;
 
 namespace PatientRegistrator.UI.View
 {
+    using PatientRegistrator.Model;
+
     /// <summary>
     /// Interaction logic for NavigationView.xaml
     /// </summary>
@@ -21,6 +23,15 @@ namespace PatientRegistrator.UI.View
         public NavigationView()
         {
             InitializeComponent();
+        }
+
+        void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var item = ((FrameworkElement)e.OriginalSource).DataContext as Patient;
+            if (item != null)
+            {
+                MessageBox.Show(item.Name + "Item's Double Click handled!");
+            }
         }
     }
 }
