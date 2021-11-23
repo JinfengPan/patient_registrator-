@@ -112,7 +112,7 @@
             
             <StackPanel Grid.Column="1">
                 <!-- Form 0 -->
-                <StackPanel  Visibility="Collapsed">
+                <StackPanel  Visibility="{Binding IsForm0Visible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="姓名"></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
@@ -197,12 +197,12 @@
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转下一页" Width="90" Margin="580 0 0 0 "/>
+                        <Button Content="跳转下一页" Width="90" Margin="580 0 0 0 " Command="{Binding IncreaseFormIndexCommand, Mode=OneWay}"/>
                     </StackPanel>
                 </StackPanel>
 
                 <!-- Form 1 情况描述-->
-                <StackPanel Margin="0 20 0 0"   Visibility="Collapsed">
+                <StackPanel Margin="0 20 0 0"   Visibility="{Binding IsForm1Visible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Label Content="情况描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="          头痛"></Label>
@@ -225,13 +225,13 @@
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.IncontinenceDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
-                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0" Command="{Binding DecreaseFormIndexCommand, Mode=OneWay}"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 " Command="{Binding IncreaseFormIndexCommand, Mode=OneWay}"/>
                     </StackPanel>
                 </StackPanel>
 
                 <!-- Form 2 检验检查描述 -->
-                <StackPanel   Visibility="Collapsed">
+                <StackPanel   Visibility="{Binding IsForm2Visible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Label Content="检验检查描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="    白细胞"></Label>
@@ -275,13 +275,13 @@
                         <TextBox Margin="20 0 0 0 " VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
-                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"  Command="{Binding DecreaseFormIndexCommand, Mode=OneWay}"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 " Command="{Binding IncreaseFormIndexCommand, Mode=OneWay}"/>
                     </StackPanel>
                 </StackPanel>
 
                 <!-- Form 3 药物相关 手术相关 -->
-                <StackPanel  Visibility="Collapsed">
+                <StackPanel    Visibility="{Binding IsForm3Visible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Label Content="药物相关:"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="是否采用药物"></Label>
@@ -356,13 +356,13 @@
                     </Grid>
 
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
-                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0" Command="{Binding DecreaseFormIndexCommand, Mode=OneWay}"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 " Command="{Binding IncreaseFormIndexCommand, Mode=OneWay}"/>
                     </StackPanel>
                 </StackPanel>
 
                 <!-- Form 4 检验检查描述 -->
-                <StackPanel Visibility="Collapsed">
+                <StackPanel   Visibility="{Binding IsForm4Visible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Label Content="检验检查描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="    白细胞"></Label>
@@ -406,13 +406,13 @@
                         <TextBox Margin="20 0 0 0 " VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck23, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
-                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0" Command="{Binding DecreaseFormIndexCommand, Mode=OneWay}"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 " Command="{Binding IncreaseFormIndexCommand, Mode=OneWay}"/>
                     </StackPanel>
                 </StackPanel>
 
                 <!-- Form 5 随访情况 -->
-                <StackPanel>
+                <StackPanel   Visibility="{Binding IsForm5Visible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Label Content="随访情况:"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -459,7 +459,7 @@
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.FollowUpTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0" Command="{Binding DecreaseFormIndexCommand, Mode=OneWay}"/>
                         <Button Content="保存" Width="90" Margin="470 0 0 0 "/>
                     </StackPanel>
                 </StackPanel>
