@@ -76,6 +76,7 @@
                         <GridViewColumn Header="手术方式" DisplayMemberBinding="{Binding SurgeryMethod}"/>
                         <GridViewColumn Header="头痛" DisplayMemberBinding="{Binding ComplicationHeadache, Converter={StaticResource BooleanToShiFouConverter}}"/>
                         <GridViewColumn Header="感染" DisplayMemberBinding="{Binding ComplicationInfection, Converter={StaticResource BooleanToShiFouConverter}}"/>
+                        <GridViewColumn Header="出血" DisplayMemberBinding="{Binding ComplicationHemorrhage, Converter={StaticResource BooleanToShiFouConverter}}"/>
                         <GridViewColumn Header="抽搐" DisplayMemberBinding="{Binding ComplicationConvulsion, Converter={StaticResource BooleanToShiFouConverter}}"/>
                         <GridViewColumn Header="二次手术" DisplayMemberBinding="{Binding ComplicationSecondSurgery, Converter={StaticResource BooleanToShiFouConverter}}"/>
                         <GridViewColumn Header="其他2" DisplayMemberBinding="{Binding ComplicationOther1}"/>
@@ -201,7 +202,7 @@
                 </StackPanel>
 
                 <!-- Form 1 情况描述-->
-                <StackPanel Margin="0 20 0 0">
+                <StackPanel Margin="0 20 0 0"   Visibility="Collapsed">
                     <Label Content="情况描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="          头痛"></Label>
@@ -230,7 +231,7 @@
                 </StackPanel>
 
                 <!-- Form 2 检验检查描述 -->
-                <StackPanel>
+                <StackPanel   Visibility="Collapsed">
                     <Label Content="检验检查描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="    白细胞"></Label>
@@ -279,7 +280,88 @@
                     </StackPanel>
                 </StackPanel>
 
-            </StackPanel>
+                <!-- Form 3 药物相关 手术相关 -->
+                <StackPanel>
+                    <Label Content="药物相关:"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="是否采用药物"></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                    DisplayMemberPath="Display" 
+                                    SelectedValuePath="Value"
+                                    SelectedValue="{Binding SelectedPatient.HasUseDrug, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="       药物类型"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.DrugType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                        <Label Content="具体的药物" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.DrugName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                    </StackPanel>
+
+                    <Label Content="手术相关:" Margin="0 40 0 0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="是否采用手术"></Label>
+                        <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                    DisplayMemberPath="Display" 
+                                    SelectedValuePath="Value"
+                                    SelectedValue="{Binding SelectedPatient.HasSurgery, Mode=TwoWay}"/>
+                    </StackPanel>
+                   
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="       手术方式"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.SurgeryMethod, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                    </StackPanel>
+
+                    <Grid Margin="0 20 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="并发症:"/>
+                        <StackPanel Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="头痛"></Label>
+                                <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                            DisplayMemberPath="Display" 
+                                            SelectedValuePath="Value"
+                                            SelectedValue="{Binding SelectedPatient.ComplicationHeadache, Mode=TwoWay}"/>
+                                <Label Content="       感染" Margin="20 0 0 0 "></Label>
+                                <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                            DisplayMemberPath="Display" 
+                                            SelectedValuePath="Value"
+                                            SelectedValue="{Binding SelectedPatient.ComplicationInfection, Mode=TwoWay}"/>
+                                <Label Content="出血" Margin="20 0 0 0 "></Label>
+                                <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                            DisplayMemberPath="Display" 
+                                            SelectedValuePath="Value"
+                                            SelectedValue="{Binding SelectedPatient.ComplicationHemorrhage, Mode=TwoWay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                                <Label Content="抽搐"></Label>
+                                <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                  DisplayMemberPath="Display" 
+                                  SelectedValuePath="Value"
+                                  SelectedValue="{Binding SelectedPatient.ComplicationConvulsion, Mode=TwoWay}"/>
+                                <Label Content="二次手术" Margin="20 0 0 0 "></Label>
+                                <ComboBox   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" ItemsSource="{Binding ShiFouDropdowns, Mode=OneWay}" 
+                                  DisplayMemberPath="Display" 
+                                  SelectedValuePath="Value"
+                                  SelectedValue="{Binding SelectedPatient.ComplicationSecondSurgery, Mode=TwoWay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                                <Label Content="其他"></Label>
+                                <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.ComplicationOther1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                                <TextBox Margin="20 0 0 0" VerticalContentAlignment="Center" Text="{Binding SelectedPatient.ComplicationOther2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel> <!-- forms -->
             
         </Grid>
     </Grid>
