@@ -110,8 +110,8 @@
             
             
             <StackPanel Grid.Column="1">
-                <!-- Form 1 -->
-                <StackPanel>
+                <!-- Form 0 -->
+                <StackPanel  Visibility="Collapsed">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="姓名"></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
@@ -199,12 +199,10 @@
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
                         <Button Content="跳转下一页" Width="90" Margin="600 0 0 0 "/>
                     </StackPanel>
-                   
-
                 </StackPanel>
 
-                <!-- Form 2 -->
-                <StackPanel Margin="0 20 0 0">
+                <!-- Form 1 情况描述-->
+                <StackPanel Margin="0 20 0 0" Visibility="Collapsed">
                     <Label Content="情况描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="          头痛"></Label>
@@ -227,6 +225,56 @@
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.IncontinenceDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
                     </StackPanel>
                 </StackPanel>
+
+                <!-- Form 2 检验检查描述 -->
+                <StackPanel>
+                    <Label Content="检验检查描述："/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="    白细胞"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Leukocyte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <Label Content="D-二聚体" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.DDimer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
+                        <Label Content="白蛋白" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Albumin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="降钙素原"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Procalcitonin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <Label Content="        血沉" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.ESR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
+                        <Label Content="    CRP" Margin="20 0 0 0 "></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CRP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="其他特殊检验"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
+                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="视力视野"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Vision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="           CT"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                        <Label Content="         MRI"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.MRI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="0 20 0 0">
+                        <Label Content="其他特殊检查"></Label>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="140"/>
+                        <TextBox Margin="20 0 0 0 " VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
+                        <Button Content="跳转下一页" Width="90" Margin="600 0 0 0 "/>
+                    </StackPanel>
+                </StackPanel>
+
             </StackPanel>
             
         </Grid>
