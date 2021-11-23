@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PatientRegistrator.UI.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ListView Grid.Column="0" x:Name="ListViewPatients" Margin="5 0 5 0" ItemsSource="{Binding Patients}">
+    <ListView Margin="5 0 5 0" ItemsSource="{Binding Patients}">
         <ListView.ItemContainerStyle>
             <Style TargetType="{x:Type ListViewItem}">
                 <Setter Property="BorderBrush" Value="LightGray" />
