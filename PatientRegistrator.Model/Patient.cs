@@ -156,6 +156,7 @@ namespace PatientRegistrator.Model
 
         public bool? ComplicationHeadache { get; set; }
         public bool? ComplicationInfection { get; set; }
+        public bool? ComplicationHemorrhage { get; set; }
         public bool? ComplicationConvulsion { get; set; }
         public bool? ComplicationSecondSurgery { get; set; }
 
