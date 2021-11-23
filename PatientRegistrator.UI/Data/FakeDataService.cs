@@ -28,6 +28,7 @@
                                                         {
                                                             new Patient
                                                                 {
+                                                                    Id = 1,
                                                                     Name = "张某某",
                                                                     Age = 37,
                                                                     Gender = Gender.Male,
@@ -104,6 +105,7 @@
                                                                 },
                                                             new Patient
                                                                 {
+                                                                    Id = 2,
                                                                     Name = "王某",
                                                                     Age = 19,
                                                                     Gender = Gender.Femail
