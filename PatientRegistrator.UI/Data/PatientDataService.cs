@@ -29,7 +29,7 @@
             }
         }
 
-        public void Save()
+        public void Save(Patient patient)
         {
             throw new NotImplementedException();
         }

@@ -14,7 +14,7 @@
             return Task.FromResult(this._allPatients);
         }
 
-        public void Save()
+        public void Save(Patient patient)
         {
             throw new System.NotImplementedException();
         }
