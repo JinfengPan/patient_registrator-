@@ -53,6 +53,39 @@
             }
         }
 
+        #region Form Index
+        private int _formIndex;
+
+        public void IncreaseFormIndex()
+        {
+            this.SetFormIndex(this._formIndex + 1);
+        }
+
+        public void DecreaseFormIndex()
+        {
+            this.SetFormIndex(this._formIndex - 1);
+        }
+
+        public void SetFormIndex(int num)
+        {
+            this._formIndex = num;
+            OnPropertyChanged(nameof(IsForm0Visible));
+            OnPropertyChanged(nameof(IsForm1Visible));
+            OnPropertyChanged(nameof(IsForm2Visible));
+            OnPropertyChanged(nameof(IsForm3Visible));
+            OnPropertyChanged(nameof(IsForm4Visible));
+            OnPropertyChanged(nameof(IsForm5Visible));
+        }
+
+        public bool IsForm0Visible => this._formIndex == 0;
+        public bool IsForm1Visible => this._formIndex == 1;
+        public bool IsForm2Visible => this._formIndex == 2;
+        public bool IsForm3Visible => this._formIndex == 3;
+        public bool IsForm4Visible => this._formIndex == 4;
+        public bool IsForm5Visible => this._formIndex == 5;
+
+        #endregion
+
     }
 
     public class GenderDropdown
