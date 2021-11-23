@@ -21,11 +21,7 @@
 
         public Patient Patient
         {
-            get
-            {
-                return this._patient;
-
-            }
+            get => this._patient;
 
             private set
             {
@@ -36,7 +32,7 @@
 
         public async Task LoadAsync(int patientId)
         {
-            Patient = await this._patientDataService.GetByIdAsync(patientId);
+            this.Patient = await this._patientDataService.GetByIdAsync(patientId);
         }
 
         public void Save()
