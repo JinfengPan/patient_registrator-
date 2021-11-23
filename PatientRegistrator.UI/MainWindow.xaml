@@ -195,14 +195,13 @@
                         <Label Content="其他" Margin="20 0 0 0 "></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherAssociatedDisease, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     </StackPanel>
-
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转下一页" Width="90" Margin="600 0 0 0 "/>
+                        <Button Content="跳转下一页" Width="90" Margin="580 0 0 0 "/>
                     </StackPanel>
                 </StackPanel>
 
                 <!-- Form 1 情况描述-->
-                <StackPanel Margin="0 20 0 0" Visibility="Collapsed">
+                <StackPanel Margin="0 20 0 0">
                     <Label Content="情况描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="          头痛"></Label>
@@ -223,6 +222,10 @@
                     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                         <Label Content="大小便失禁"></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.IncontinenceDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
                     </StackPanel>
                 </StackPanel>
 
@@ -271,7 +274,8 @@
                         <TextBox Margin="20 0 0 0 " VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                        <Button Content="跳转下一页" Width="90" Margin="600 0 0 0 "/>
+                        <Button Content="跳转上一页" Width="90" Margin="20 0 0 0"/>
+                        <Button Content="跳转下一页" Width="90" Margin="470 0 0 0 "/>
                     </StackPanel>
                 </StackPanel>
 
