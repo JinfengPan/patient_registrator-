@@ -5,19 +5,31 @@
 
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
+    using PatientRegistrator.UI.Events;
+
+    using Prism.Events;
 
     public class PatientDetailViewModel : ViewModelBase, IPatientDetailViewModel
     {
         private IPatientDataService _patientDataService;
-
+        private IEventAggregator _eventAggregator;
         private Patient _patient;
 
-        public PatientDetailViewModel(IPatientDataService patientDataService)
+        public PatientDetailViewModel(IPatientDataService patientDataService,
+                                      IEventAggregator eventEventAggregator)
         {
             this._patientDataService = patientDataService;
             this.IncreaseFormIndexCommand = new DelegateCommand(this.IncreaseFormIndex);
             this.DecreaseFormIndexCommand = new DelegateCommand(this.DecreaseFormIndex);
             this.SavePatientCommand = new DelegateCommand(this.Save);
+            this._eventAggregator = eventEventAggregator;
+            this._eventAggregator.GetEvent<OpenPatientDetailViewEvent>().Subscribe(OnEditPatientDetail);
+        }
+
+        private async void OnEditPatientDetail(int patientId)
+        {
+            this.SetFormIndex(0);
+            await this.LoadAsync(patientId);
         }
 
         public ObservableCollection<GenderDropdown> GenderDropdowns { get; set; } = GenderDropdown.GenderDropdowns;
@@ -51,6 +63,8 @@
 
         #region Form Index
         private int _formIndex;
+
+
 
         public void IncreaseFormIndex()
         {
