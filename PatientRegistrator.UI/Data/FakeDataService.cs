@@ -62,6 +62,7 @@
                                                                     SurgeryMethod = "开颅",
                                                                     ComplicationHeadache = true,
                                                                     ComplicationInfection = false,
+                                                                    ComplicationHemorrhage = true,
                                                                     ComplicationConvulsion = true,
                                                                     ComplicationSecondSurgery = false,
                                                                     ComplicationOther1 = "其他并发症1",
