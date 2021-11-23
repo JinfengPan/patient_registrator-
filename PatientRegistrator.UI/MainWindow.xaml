@@ -481,7 +481,8 @@
                                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.FollowUpOther1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                                     <TextBox Margin="20 0 0 0" VerticalContentAlignment="Center" Text="{Binding SelectedPatient.FollowUpOther2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal"  Margin="53 20 0 0">
+                                <StackPanel Orientation="Horizontal"  Margin="0 20 0 0">
+                                    <Label Content="           "></Label>
                                     <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.FollowUpOther3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                                     <TextBox Margin="20 0 0 0" VerticalContentAlignment="Center" Text="{Binding SelectedPatient.FollowUpOther4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                                 </StackPanel>
