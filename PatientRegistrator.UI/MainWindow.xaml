@@ -231,25 +231,25 @@
                     <Label Content="检验检查描述："/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="    白细胞"></Label>
-                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Leukocyte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Leukocyte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                         <Label Content="D-二聚体" Margin="20 0 0 0 "></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.DDimer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                         <Label Content="白蛋白" Margin="20 0 0 0 "></Label>
-                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Albumin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Albumin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                         <Label Content="降钙素原"></Label>
-                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Procalcitonin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.Procalcitonin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableDoubleConverter}}" Width="70"/>
                         <Label Content="        血沉" Margin="20 0 0 0 "></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.ESR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                         <Label Content="    CRP" Margin="20 0 0 0 "></Label>
-                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CRP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+                        <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.CRP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                         <Label Content="其他特殊检验"></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
-                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
+                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                         <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherLaboratoryExam3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
@@ -267,7 +267,7 @@
                     <StackPanel Orientation="Horizontal"  Margin="0 20 0 0">
                         <Label Content="其他特殊检查"></Label>
                         <TextBox  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
-                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="140"/>
+                        <TextBox Margin="20 0 0 0 "  VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
                         <TextBox Margin="20 0 0 0 " VerticalContentAlignment="Center" Text="{Binding SelectedPatient.OtherSpecialCheck3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 40 0 0">

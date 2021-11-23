@@ -8,5 +8,6 @@
         <converters:BooleanToShiFouConverter x:Key="BooleanToShiFouConverter"/>
         <converters:GenderToNanNvConverter x:Key="GenderToNanNvConverter"/>
         <converters:StringToNullableIntConverter x:Key="StringToNullableIntConverter" />
+        <converters:StringToNullableDoubleConverter x:Key="StringToNullableDoubleConverter" />
     </Application.Resources>
 </Application>
