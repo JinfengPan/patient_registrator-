@@ -6,8 +6,6 @@
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
 
-
-
     public class NavigationViewModel : INavigationViewModel
     {
         private IPatientDataService _patientDataService;

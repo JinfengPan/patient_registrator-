@@ -1,7 +1,5 @@
 ﻿namespace PatientRegistrator.UI.Startup
 {
-    using System.Runtime.InteropServices.ComTypes;
-
     using Autofac;
 
     using PatientRegistrator.DataAccess;
@@ -15,6 +13,7 @@
             var builder = new ContainerBuilder();
             builder.RegisterType<CoreContext>().AsSelf();
             builder.RegisterType<MainWindow>().AsSelf();
+            builder.RegisterType<NavigationViewModel>().As<INavigationViewModel>();
             builder.RegisterType<MainViewModel>().AsSelf();
             builder.RegisterType<FakeDataService>().As<IPatientDataService>();
 
