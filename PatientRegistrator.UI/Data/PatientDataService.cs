@@ -28,5 +28,10 @@
                 return await ctx.Patients.AsNoTracking().ToListAsync();
             }
         }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

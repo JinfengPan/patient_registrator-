@@ -14,6 +14,11 @@
             return Task.FromResult(this._allPatients);
         }
 
+        public void Save()
+        {
+            throw new System.NotImplementedException();
+        }
+
         private List<Patient> _allPatients = new List<Patient>
                                                         {
                                                             new Patient

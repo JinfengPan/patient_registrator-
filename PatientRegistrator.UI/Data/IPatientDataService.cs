@@ -8,5 +8,7 @@
     public interface IPatientDataService
     {
         Task<List<Patient>> GetAllAsync();
+
+        void Save();
     }
 }
