@@ -14,6 +14,11 @@
             return Task.FromResult(this._allPatients);
         }
 
+        public Task<Patient> GetByIdAsync(int patientId)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Save(Patient patient)
         {
             throw new System.NotImplementedException();

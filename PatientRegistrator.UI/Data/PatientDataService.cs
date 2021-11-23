@@ -29,6 +29,14 @@
             }
         }
 
+        public async Task<Patient> GetByIdAsync(int patientId)
+        {
+            using (var ctx = _contextCreator())
+            {
+                return await ctx.Patients.AsNoTracking().SingleAsync(p => p.Id == patientId);
+            }
+        }
+
         public void Save(Patient patient)
         {
             throw new NotImplementedException();

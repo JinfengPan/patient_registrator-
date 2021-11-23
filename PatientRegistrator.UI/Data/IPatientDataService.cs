@@ -9,6 +9,8 @@
     {
         Task<List<Patient>> GetAllAsync();
 
+        Task<Patient> GetByIdAsync(int patientId);
+
         void Save(Patient patient);
     }
 }
