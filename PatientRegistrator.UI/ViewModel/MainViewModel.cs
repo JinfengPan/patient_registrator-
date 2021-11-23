@@ -14,16 +14,16 @@
 
         private Patient _selectedPatient;
 
-        public MainViewModel(IPatientDataService patientDataService)
+        public MainViewModel(INavigationViewModel navigationViewModel, IPatientDataService patientDataService)
         {
-            Patients = new ObservableCollection<Patient>();
+            this.NavigationViewModel = navigationViewModel;
             this._patientDataService = patientDataService;
             this.IncreaseFormIndexCommand = new DelegateCommand(this.IncreaseFormIndex);
             this.DecreaseFormIndexCommand = new DelegateCommand(this.DecreaseFormIndex);
             this.SavePatientCommand = new DelegateCommand(this.Save);
         }
 
-        public ObservableCollection<Patient> Patients { get; set; }
+        public INavigationViewModel NavigationViewModel { get; }
 
         public ObservableCollection<GenderDropdown> GenderDropdowns { get; set; } = GenderDropdown.GenderDropdowns;
 
@@ -38,14 +38,7 @@
         public async Task LoadAsync()
         {
 
-            var patients = await this._patientDataService.GetAllAsync();
-
-            Patients.Clear();
-
-            foreach (var patient in patients)
-            {
-                Patients.Add(patient);
-            }
+            await this.NavigationViewModel.LoadAsync();
         }
 
         public void Save()
