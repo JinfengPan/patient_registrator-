@@ -9,5 +9,6 @@
         <converters:GenderToNanNvConverter x:Key="GenderToNanNvConverter"/>
         <converters:StringToNullableIntConverter x:Key="StringToNullableIntConverter" />
         <converters:StringToNullableDoubleConverter x:Key="StringToNullableDoubleConverter" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Application.Resources>
 </Application>
