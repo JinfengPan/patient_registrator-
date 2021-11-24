@@ -4,9 +4,11 @@
     using System.Diagnostics.Eventing.Reader;
     using System.Threading.Tasks;
     using System.Windows;
+    using System.Windows.Input;
 
     using PatientRegistrator.UI.Events;
 
+    using Prism.Commands;
     using Prism.Events;
 
     public class MainViewModel : ViewModelBase
@@ -24,8 +26,16 @@
 
             this._eventAggregator = eventAggregator;
             this._eventAggregator.GetEvent<OpenPatientDetailViewEvent>().Subscribe(OnEditPatientDetail);
+
+            this.CancelPatientDetail = new DelegateCommand(this.CancelPatientDetailForm);
         }
 
+        private void CancelPatientDetailForm()
+        {
+            this.PatientDetailViewModel = null;
+        }
+
+        public ICommand CancelPatientDetail { get; }
         public INavigationViewModel NavigationViewModel { get; }
 
         private IPatientDetailViewModel _patientDetailViewModel;

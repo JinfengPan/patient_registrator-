@@ -25,9 +25,10 @@
 
             <view:NavigationView DataContext="{Binding NavigationViewModel}"/>
 
-            <Border Grid.Column="1" Width="705" Visibility="{Binding IsFormVisible, Mode=OneWay}">
+            <StackPanel Grid.Column="1" Width="705" Visibility="{Binding IsFormVisible, Mode=OneWay}">
                 <view:PatientDetailView DataContext="{Binding PatientDetailViewModel}" />
-            </Border>
+                <Button Content="取消" Width="90" Margin="20" Command="{Binding CancelPatientDetail}"></Button>
+            </StackPanel>
             
         </Grid>
     </Grid>
