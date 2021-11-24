@@ -14,38 +14,26 @@
 
     public class PatientDataService : IPatientDataService
     {
-        private Func<CoreContext> _contextCreator;
+        private CoreContext _coreContext;
 
-        public PatientDataService(Func<CoreContext> contextCreator)
+        public PatientDataService(CoreContext context)
         {
-            this._contextCreator = contextCreator;
+            this._coreContext = context;
         }
 
         public async Task<List<Patient>> GetAllAsync()
         {
-            using (var ctx = _contextCreator())
-            {
-                return await ctx.Patients.AsNoTracking().ToListAsync();
-            }
+            return await this._coreContext.Patients.AsNoTracking().ToListAsync();
         }
 
         public async Task<Patient> GetByIdAsync(int patientId)
         {
-            using (var ctx = _contextCreator())
-            {
-                return await ctx.Patients.AsNoTracking().SingleAsync(p => p.Id == patientId);
-            }
+            return await this._coreContext.Patients.SingleAsync(p => p.Id == patientId);
         }
 
-        public async Task SaveAsync(Patient patient)
+        public async Task SaveAsync()
         {
-            using (var ctx = this._contextCreator())
-            {
-                ctx.Patients.Attach(patient);
-                ctx.Entry(patient).State = EntityState.Modified;
-                await ctx.SaveChangesAsync();
-            }
-
+            await this._coreContext.SaveChangesAsync();
         }
     }
 }

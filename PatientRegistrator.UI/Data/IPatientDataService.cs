@@ -11,6 +11,6 @@
 
         Task<Patient> GetByIdAsync(int patientId);
 
-        Task SaveAsync(Patient patient);
+        Task SaveAsync();
     }
 }
