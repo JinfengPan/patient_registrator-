@@ -37,9 +37,15 @@
             }
         }
 
-        public void Save(Patient patient)
+        public async Task SaveAsync(Patient patient)
         {
-            throw new NotImplementedException();
+            using (var ctx = this._contextCreator())
+            {
+                ctx.Patients.Attach(patient);
+                ctx.Entry(patient).State = EntityState.Modified;
+                await ctx.SaveChangesAsync();
+            }
+
         }
     }
 }

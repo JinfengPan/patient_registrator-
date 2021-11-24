@@ -96,7 +96,7 @@
             return Task.FromResult(patient);
         }
 
-        public void Save(Patient patient)
+        public Task SaveAsync(Patient patient)
         {
             throw new System.NotImplementedException();
         }
