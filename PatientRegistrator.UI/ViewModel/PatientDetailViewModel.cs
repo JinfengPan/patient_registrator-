@@ -2,11 +2,13 @@
 {
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
+    using System.Windows.Input;
 
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
     using PatientRegistrator.UI.Events;
 
+    using Prism.Commands;
     using Prism.Events;
 
     public class PatientDetailViewModel : ViewModelBase, IPatientDetailViewModel
@@ -36,9 +38,9 @@
 
         public ObservableCollection<ShiFouDropdown> ShiFouDropdowns { get; set; } = ShiFouDropdown.ShiFouDropdowns;
 
-        public DelegateCommand IncreaseFormIndexCommand { get; }
-        public DelegateCommand DecreaseFormIndexCommand { get; }
-        public DelegateCommand SavePatientCommand { get; }
+        public ICommand IncreaseFormIndexCommand { get; }
+        public ICommand DecreaseFormIndexCommand { get; }
+        public ICommand SavePatientCommand { get; }
 
         public Patient Patient
         {
