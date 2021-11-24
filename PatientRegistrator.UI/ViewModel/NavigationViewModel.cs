@@ -1,5 +1,6 @@
 ﻿namespace PatientRegistrator.UI.ViewModel
 {
+    using System;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
 
@@ -17,9 +18,24 @@
         public NavigationViewModel(IPatientDataService patientDataService, IEventAggregator eventEventAggregator)
         {
             this._eventAggregator = eventEventAggregator;
+            this._eventAggregator.GetEvent<AfterPatientSavedEvent>().Subscribe(AfterPatientSaved);
             this._patientDataService = patientDataService;
 
             this.Patients = new ObservableCollection<Patient>();
+        }
+
+        private void AfterPatientSaved(Patient obj)
+        {
+            for (int i = 0; i < this.Patients.Count; i++)
+            {
+                if (this.Patients[i].Id == obj.Id)
+                {
+                    this.Patients[i] = obj;
+                    return;
+                }
+            }
+
+            this.Patients.Add(obj);
         }
 
         public ObservableCollection<Patient> Patients { get; }
