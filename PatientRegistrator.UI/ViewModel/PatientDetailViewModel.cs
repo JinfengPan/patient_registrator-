@@ -58,9 +58,9 @@
             this.Patient = await this._patientDataService.GetByIdAsync(patientId);
         }
 
-        public void Save()
+        public async void Save()
         {
-            this._patientDataService.Save(this.Patient);
+            await this._patientDataService.SaveAsync(this.Patient);
         }
 
         #region Form Index

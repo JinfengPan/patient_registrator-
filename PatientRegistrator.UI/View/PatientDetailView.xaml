@@ -396,7 +396,7 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <Button Content="跳转上一页" Width="90" Margin="20 0 0 0" Command="{Binding DecreaseFormIndexCommand, Mode=OneWay}"/>
-                <Button Content="保存" Width="90" Margin="470 0 0 0 "/>
+                <Button Content="保存" Command="{Binding SavePatientCommand, Mode=OneWay}" Width="90" Margin="470 0 0 0 "/>
             </StackPanel>
         </Grid>
     </StackPanel>
