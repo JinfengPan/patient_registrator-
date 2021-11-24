@@ -25,10 +25,9 @@
             this.DecreaseFormIndexCommand = new DelegateCommand(this.DecreaseFormIndex);
             this.SavePatientCommand = new DelegateCommand(this.Save);
             this._eventAggregator = eventEventAggregator;
-            this._eventAggregator.GetEvent<OpenPatientDetailViewEvent>().Subscribe(OnEditPatientDetail);
         }
 
-        private async void OnEditPatientDetail(int patientId)
+        public async Task Init(int patientId)
         {
             this.SetFormIndex(0);
             await this.LoadAsync(patientId);
@@ -67,8 +66,6 @@
 
         #region Form Index
         private int _formIndex;
-
-
 
         public void IncreaseFormIndex()
         {
