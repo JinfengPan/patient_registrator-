@@ -61,6 +61,8 @@
         public async void Save()
         {
             await this._patientDataService.SaveAsync(this.Patient);
+
+            this._eventAggregator.GetEvent<AfterPatientSavedEvent>().Publish(this.Patient);
         }
 
         #region Form Index
