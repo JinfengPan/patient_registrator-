@@ -20,13 +20,14 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <view:NavigationView DataContext="{Binding NavigationViewModel}"/>
 
-            <view:PatientDetailView Grid.Column="1" DataContext="{Binding PatientDetailViewModel}" />
-
+            <Border Grid.Column="1" Width="705" Visibility="{Binding IsFormVisible, Mode=OneWay}">
+                <view:PatientDetailView DataContext="{Binding PatientDetailViewModel}" />
+            </Border>
             
         </Grid>
     </Grid>

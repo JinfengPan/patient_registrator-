@@ -1,7 +1,9 @@
 ﻿namespace PatientRegistrator.UI.ViewModel
 {
     using System;
+    using System.Diagnostics.Eventing.Reader;
     using System.Threading.Tasks;
+    using System.Windows;
 
     using PatientRegistrator.UI.Events;
 
@@ -35,6 +37,20 @@
             {
                 this._patientDetailViewModel = value;
                 this.OnPropertyChanged();
+                OnPropertyChanged(nameof(IsFormVisible));
+            }
+        }
+
+        public Visibility IsFormVisible
+        {
+            get
+            {
+                if (this.PatientDetailViewModel != null)
+                {
+                    return Visibility.Visible;
+                }
+
+                return Visibility.Collapsed;
             }
         }
 
