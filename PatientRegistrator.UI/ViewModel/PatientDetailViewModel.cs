@@ -60,7 +60,7 @@
 
         public async void Save()
         {
-            await this._patientDataService.SaveAsync(this.Patient);
+            await this._patientDataService.SaveAsync();
 
             this._eventAggregator.GetEvent<AfterPatientSavedEvent>().Publish(this.Patient);
         }
