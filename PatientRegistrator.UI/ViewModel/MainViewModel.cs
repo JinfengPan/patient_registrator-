@@ -31,8 +31,6 @@
             this.CancelPatientDetail = new DelegateCommand(this.CancelPatientDetailForm);
         }
 
-
-
         private void CancelPatientDetailForm()
         {
             this.PatientDetailViewModel = null;
