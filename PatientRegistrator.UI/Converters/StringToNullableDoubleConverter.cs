@@ -23,7 +23,12 @@
             if (String.IsNullOrEmpty(s))
                 return null;
             else
-                return (double?)double.Parse(s, culture);
+            {
+                double result;
+                return double.TryParse(s, out result)
+                           ? (double?)result
+                           : null;
+            }
         }
     }
 }
