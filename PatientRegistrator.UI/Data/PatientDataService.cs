@@ -35,5 +35,10 @@
         {
             await this._coreContext.SaveChangesAsync();
         }
+
+        public void Add(Patient patient)
+        {
+            this._coreContext.Add(patient);
+        }
     }
 }

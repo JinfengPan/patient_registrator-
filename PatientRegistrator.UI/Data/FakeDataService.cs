@@ -101,6 +101,11 @@
             throw new System.NotImplementedException();
         }
 
+        public void Add(Patient patient)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private List<Patient> _allPatients = new List<Patient>
                                                         {
                                                             new Patient

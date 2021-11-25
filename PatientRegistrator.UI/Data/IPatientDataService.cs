@@ -12,5 +12,7 @@
         Task<Patient> GetByIdAsync(int patientId);
 
         Task SaveAsync();
+
+        void Add(Patient patient);
     }
 }
