@@ -19,7 +19,7 @@
             builder.RegisterType<PatientDetailViewModel>().As<IPatientDetailViewModel>();
             builder.RegisterType<NavigationViewModel>().As<INavigationViewModel>();
             builder.RegisterType<MainViewModel>().AsSelf();
-            builder.RegisterType<FakeDataService>().As<IPatientDataService>();
+            builder.RegisterType<PatientDataService>().As<IPatientDataService>();
 
             return builder.Build();
         }

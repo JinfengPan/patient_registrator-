@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace PatientRegistrator.UI
 {
+    using PatientRegistrator.DataAccess;
     using PatientRegistrator.UI.ViewModel;
 
     /// <summary>
@@ -24,9 +25,12 @@ namespace PatientRegistrator.UI
     {
         private MainViewModel _viewModel;
 
-        public MainWindow(MainViewModel viewModel)
+        private Func<CoreContext> _contextCreator;
+
+        public MainWindow(MainViewModel viewModel, Func<CoreContext> contextCreator)
         {
-            
+            this._contextCreator = contextCreator;
+
             InitializeComponent();
             this._viewModel = viewModel;
             DataContext = this._viewModel;
@@ -35,6 +39,10 @@ namespace PatientRegistrator.UI
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            using(var ctx = this._contextCreator())
+            {
+                ctx.Database.EnsureCreated();
+            }
             await this._viewModel.LoadAsync();
         }
     }
