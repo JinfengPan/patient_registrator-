@@ -40,5 +40,10 @@
         {
             this._coreContext.Add(patient);
         }
+
+        public void Remove(Patient patient)
+        {
+            this._coreContext.Remove(patient);
+        }
     }
 }
