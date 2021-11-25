@@ -6,6 +6,7 @@
     using System.Windows;
     using System.Windows.Input;
 
+    using PatientRegistrator.Model;
     using PatientRegistrator.UI.Events;
 
     using Prism.Commands;
@@ -26,7 +27,7 @@
 
             this._eventAggregator = eventAggregator;
             this._eventAggregator.GetEvent<OpenPatientDetailViewEvent>().Subscribe(OnEditPatientDetail);
-
+            this._eventAggregator.GetEvent<AfterPatientSavedEvent>().Subscribe(AfterPatientSaved);
             this.CreateNewPatientCommand = new DelegateCommand(this.OnCreateNewPatientExecute);
             this.CancelPatientDetail = new DelegateCommand(this.CancelPatientDetailForm);
         }
@@ -80,6 +81,11 @@
         private void OnCreateNewPatientExecute()
         {
             this.OnEditPatientDetail(null);
+        }
+
+        private void AfterPatientSaved(Patient obj)
+        {
+            this.PatientDetailViewModel = null;
         }
     }
 }
