@@ -3,11 +3,13 @@
     using System;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
+    using System.Windows.Input;
 
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
     using PatientRegistrator.UI.Events;
 
+    using Prism.Commands;
     using Prism.Events;
 
     public class NavigationViewModel : ViewModelBase, INavigationViewModel
@@ -22,6 +24,12 @@
             this._patientDataService = patientDataService;
 
             this.Patients = new ObservableCollection<Patient>();
+            this.RemoveItem = new DelegateCommand<Patient>(DeleteItem);
+        }
+
+        private void DeleteItem(Patient patient)
+        {
+            this.Patients.Remove(patient);
         }
 
         private void AfterPatientSaved(Patient obj)
@@ -39,6 +47,8 @@
         }
 
         public ObservableCollection<Patient> Patients { get; }
+
+        public ICommand RemoveItem { get; }
 
         public async Task LoadAsync()
         {
