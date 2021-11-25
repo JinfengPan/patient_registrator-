@@ -4,8 +4,6 @@
 
     public interface IPatientDetailViewModel
     {
-        Task LoadAsync(int patientId);
-
-        Task Init(int patientId);
+        Task Init(int? patientId);
     }
 }

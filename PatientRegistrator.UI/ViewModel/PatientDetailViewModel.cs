@@ -27,7 +27,7 @@
             this._eventAggregator = eventEventAggregator;
         }
 
-        public async Task Init(int patientId)
+        public async Task Init(int? patientId)
         {
             this.SetFormIndex(0);
             await this.LoadAsync(patientId);
@@ -52,9 +52,18 @@
             }
         }
 
-        public async Task LoadAsync(int patientId)
+        public async Task LoadAsync(int? patientId)
         {
-            this.Patient = await this._patientDataService.GetByIdAsync(patientId);
+            this.Patient = patientId.HasValue
+                               ? await this._patientDataService.GetByIdAsync(patientId.Value)
+                               : CreateNewPatient();
+        }
+
+        private Patient CreateNewPatient()
+        {
+            var patient = new Patient();
+            this._patientDataService.Add(patient);
+            return patient;
         }
 
         public async void Save()

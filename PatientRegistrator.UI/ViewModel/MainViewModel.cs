@@ -27,14 +27,18 @@
             this._eventAggregator = eventAggregator;
             this._eventAggregator.GetEvent<OpenPatientDetailViewEvent>().Subscribe(OnEditPatientDetail);
 
+            this.CreateNewPatientCommand = new DelegateCommand(this.OnCreateNewPatientExecute);
             this.CancelPatientDetail = new DelegateCommand(this.CancelPatientDetailForm);
         }
+
+
 
         private void CancelPatientDetailForm()
         {
             this.PatientDetailViewModel = null;
         }
 
+        public ICommand CreateNewPatientCommand { get; }
         public ICommand CancelPatientDetail { get; }
         public INavigationViewModel NavigationViewModel { get; }
 
@@ -69,10 +73,15 @@
             await this.NavigationViewModel.LoadAsync();
         }
 
-        private async void OnEditPatientDetail(int patientId)
+        private async void OnEditPatientDetail(int? patientId)
         {
             this.PatientDetailViewModel = this._patientDetailViewModelCreator();
             await this.PatientDetailViewModel.Init(patientId);
+        }
+
+        private void OnCreateNewPatientExecute()
+        {
+            this.OnEditPatientDetail(null);
         }
     }
 }
