@@ -27,8 +27,10 @@
             this.RemoveItem = new DelegateCommand<Patient>(DeleteItem);
         }
 
-        private void DeleteItem(Patient patient)
+        private async void DeleteItem(Patient patient)
         {
+            this._patientDataService.Remove(patient);
+            await this._patientDataService.SaveAsync();
             this.Patients.Remove(patient);
         }
 
