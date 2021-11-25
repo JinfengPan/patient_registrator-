@@ -2,7 +2,7 @@
 {
     using Prism.Events;
 
-    public class OpenPatientDetailViewEvent : PubSubEvent<int>
+    public class OpenPatientDetailViewEvent : PubSubEvent<int?>
     {
         
     }
