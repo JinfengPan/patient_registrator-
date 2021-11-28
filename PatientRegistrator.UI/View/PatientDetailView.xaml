@@ -157,7 +157,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label Content="降钙素原"></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding Patient.Procalcitonin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, Converter={StaticResource StringToNullableDoubleConverter}}" Width="70"/>
+                    <TextBox  VerticalContentAlignment="Center" Text="{Binding Patient.Procalcitonin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     <Label Content="        血沉" Margin="20 0 0 0 "></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding Patient.ESR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                     <Label Content="    CRP" Margin="20 0 0 0 "></Label>
@@ -301,7 +301,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label Content="降钙素原"></Label>
-                    <TextBox  VerticalContentAlignment="Center" Text="{Binding Patient.Procalcitonin2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, Converter={StaticResource StringToNullableDoubleConverter}}" Width="70"/>
+                    <TextBox  VerticalContentAlignment="Center" Text="{Binding Patient.Procalcitonin2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
                     <Label Content="        血沉" Margin="20 0 0 0 "></Label>
                     <TextBox  VerticalContentAlignment="Center" Text="{Binding Patient.ESR2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToNullableIntConverter}}" Width="70"/>
                     <Label Content="    CRP" Margin="20 0 0 0 "></Label>
