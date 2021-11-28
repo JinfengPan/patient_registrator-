@@ -6,6 +6,8 @@
     using System.Windows;
     using System.Windows.Input;
 
+    using Microsoft.Win32;
+
     using PatientRegistrator.Model;
     using PatientRegistrator.UI.Data;
     using PatientRegistrator.UI.Events;
@@ -38,7 +40,13 @@
 
         private async void OnExportPatientsExecute()
         {
-            await this._patientDataService.Export();
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                await this._patientDataService.Export(saveFileDialog.FileName);
+            }
         }
 
         private void CancelPatientDetailForm()
