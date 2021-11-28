@@ -50,21 +50,102 @@
             this._coreContext.Remove(patient);
         }
 
-        public void Export()
+        public async void Export()
         {
             //创建workbook，说白了就是在内存中创建一个Excel文件
             IWorkbook workbook = new HSSFWorkbook();
             //要添加至少一个sheet,没有sheet的excel是打不开的
             ISheet sheet1 = workbook.CreateSheet("sheet1");
 
-            IRow row1 = sheet1.CreateRow(0);//添加第1行,注意行列的索引都是从0开始的
+            IRow row0 = sheet1.CreateRow(0);//添加第1行,注意行列的索引都是从0开始的
 
-            ICell cell1 = row1.CreateCell(0);//给第1行添加第1个单元格
-            cell1.SetCellValue("hello npoi!");//给单元格赋值
-            //上边3个步骤合在一起：sheet1.CreateRow(0).CreateCell(0).SetCellValue("hello npoi");
+            for (int i = 0; i < headers.Length; i++)
+            {
+                ICell cell1 = row0.CreateCell(i);//给第1行添加第1个单元格
+                cell1.SetCellValue(headers[i]);//给单元格赋值
+            }
 
-            //获取第一行第一列的string值
-            Console.WriteLine(sheet1.GetRow(0).GetCell(0).StringCellValue); //输出：hello npoi
+            var patients = await this.GetAllAsync();
+
+            for (int i = 0; i < patients.Count; i++)
+            {
+                IRow row = sheet1.CreateRow(i + 1);
+
+                row.CreateCell(0);
+                row.CreateCell(1); 
+                row.CreateCell(2);
+                row.CreateCell(3);
+                row.CreateCell(4);
+                row.CreateCell(5);
+                row.CreateCell(6);
+                row.CreateCell(7);
+                row.CreateCell(8);
+                row.CreateCell(9);
+                row.CreateCell(10);
+                row.CreateCell(11);
+                row.CreateCell(12);
+                row.CreateCell(13);
+                row.CreateCell(14);
+                row.CreateCell(15);
+                row.CreateCell(16);
+                row.CreateCell(17);
+                row.CreateCell(18);
+                row.CreateCell(19);
+                row.CreateCell(20);
+                row.CreateCell(21);
+                row.CreateCell(22);
+                row.CreateCell(23);
+                row.CreateCell(24);
+                row.CreateCell(25);
+                row.CreateCell(26);
+                row.CreateCell(27);
+                row.CreateCell(28);
+                row.CreateCell(29);
+                row.CreateCell(30);
+                row.CreateCell(31);
+                row.CreateCell(32);
+                row.CreateCell(33);
+                row.CreateCell(34);
+                row.CreateCell(35);
+                row.CreateCell(36);
+                row.CreateCell(37);
+                row.CreateCell(38);
+                row.CreateCell(39);
+                row.CreateCell(40);
+                row.CreateCell(41);
+                row.CreateCell(42);
+                row.CreateCell(43);
+                row.CreateCell(44);
+                row.CreateCell(45);
+                row.CreateCell(46);
+                row.CreateCell(47);
+                row.CreateCell(48);
+                row.CreateCell(49);
+                row.CreateCell(50);
+                row.CreateCell(51);
+                row.CreateCell(52);
+                row.CreateCell(53);
+                row.CreateCell(54);
+                row.CreateCell(55);
+                row.CreateCell(56);
+                row.CreateCell(57);
+                row.CreateCell(58);
+                row.CreateCell(59);
+                row.CreateCell(60);
+                row.CreateCell(61);
+                row.CreateCell(62);
+                row.CreateCell(63);
+                row.CreateCell(64);
+                row.CreateCell(65);
+                row.CreateCell(66);
+                row.CreateCell(67);
+                row.CreateCell(68);
+                row.CreateCell(69);
+                row.CreateCell(70);
+                row.CreateCell(71);
+                row.CreateCell(72);
+            }
+            
 
             //写入文件
             using (FileStream file = new FileStream(@"D:/TestFiles/test.xls", FileMode.Create))
