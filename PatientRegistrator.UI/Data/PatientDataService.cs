@@ -118,12 +118,12 @@
                 row.CreateCell(46, CellType.String).SetCellValue(ConvertBooleanToString(patients[i].ComplicationSecondSurgery));
                 row.CreateCell(47, CellType.String).SetCellValue(patients[i].ComplicationOther1);
                 row.CreateCell(48, CellType.String).SetCellValue(patients[i].ComplicationOther2);
-                row.CreateCell(49, CellType.String).SetCellValue(patients[i].Leukocyte2);
-                row.CreateCell(50, CellType.String).SetCellValue(patients[i].DDimer2);
-                row.CreateCell(51, CellType.String).SetCellValue(patients[i].Albumin2);
+                SetNullabeIntCell(row, 49, patients[i].Leukocyte2);
+                SetNullabeIntCell(row, 50, patients[i].DDimer2);
+                SetNullabeIntCell(row, 51, patients[i].Albumin2);
                 row.CreateCell(52, CellType.String).SetCellValue(patients[i].Procalcitonin2);
-                row.CreateCell(53, CellType.String).SetCellValue(patients[i].ESR2);
-                row.CreateCell(54, CellType.String).SetCellValue(patients[i].CRP2);
+                SetNullabeIntCell(row, 53, patients[i].ESR2);
+                SetNullabeIntCell(row, 54, patients[i].CRP2);
                 row.CreateCell(55, CellType.String).SetCellValue(patients[i].OtherLaboratoryExam21);
                 row.CreateCell(56, CellType.String).SetCellValue(patients[i].OtherLaboratoryExam22);
                 row.CreateCell(57, CellType.String).SetCellValue(patients[i].OtherLaboratoryExam23);
