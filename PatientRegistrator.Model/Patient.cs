@@ -74,7 +74,7 @@ namespace PatientRegistrator.Model
         /// <summary>
         /// Gets or sets the 降钙素原.
         /// </summary>
-        public double? Procalcitonin { get; set; }
+        public string Procalcitonin { get; set; }
 
         /// <summary>
         /// Gets or sets the 血沉.
@@ -120,7 +120,7 @@ namespace PatientRegistrator.Model
         /// <summary>
         /// Gets or sets the 降钙素原.
         /// </summary>
-        public double? Procalcitonin2 { get; set; }
+        public string Procalcitonin2 { get; set; }
 
         /// <summary>
         /// Gets or sets the 血沉.
