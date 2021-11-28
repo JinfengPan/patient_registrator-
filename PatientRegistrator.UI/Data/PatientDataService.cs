@@ -91,12 +91,12 @@
                 row.CreateCell(19, CellType.String).SetCellValue(patients[i].ConsciousnessDisorderDesc);
                 row.CreateCell(20, CellType.String).SetCellValue(patients[i].HemiplegiaDesc);
                 row.CreateCell(21, CellType.String).SetCellValue(patients[i].IncontinenceDesc);
-                //row.CreateCell(22, CellType.String).SetCellValue(patients[i].Leukocyte);
-                //row.CreateCell(23, CellType.String).SetCellValue(patients[i].DDimer);
-                //row.CreateCell(24, CellType.String).SetCellValue(patients[i].Albumin);
-                //row.CreateCell(25, CellType.String).SetCellValue(patients[i].Procalcitonin);
-                //row.CreateCell(26, CellType.String).SetCellValue(patients[i].ESR);
-                //row.CreateCell(27, CellType.String).SetCellValue(patients[i].CRP);
+                SetNullabeIntCell(row, 22, patients[i].Leukocyte);
+                SetNullabeIntCell(row, 23, patients[i].DDimer);
+                SetNullabeIntCell(row, 24, patients[i].Albumin);
+                row.CreateCell(25, CellType.String).SetCellValue(patients[i].Procalcitonin);
+                SetNullabeIntCell(row, 26, patients[i].ESR);
+                SetNullabeIntCell(row, 27, patients[i].CRP);
                 row.CreateCell(28, CellType.String).SetCellValue(patients[i].OtherLaboratoryExam1);
                 row.CreateCell(29, CellType.String).SetCellValue(patients[i].OtherLaboratoryExam2);
                 row.CreateCell(30, CellType.String).SetCellValue(patients[i].OtherLaboratoryExam3);
