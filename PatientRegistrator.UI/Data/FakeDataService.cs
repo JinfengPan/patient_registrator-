@@ -111,6 +111,11 @@
             throw new System.NotImplementedException();
         }
 
+        public Task Export()
+        {
+            throw new System.NotImplementedException();
+        }
+
         private List<Patient> _allPatients = new List<Patient>
                                                         {
                                                             new Patient

@@ -16,5 +16,7 @@
         void Add(Patient patient);
 
         void Remove(Patient patient);
+
+        Task Export();
     }
 }
