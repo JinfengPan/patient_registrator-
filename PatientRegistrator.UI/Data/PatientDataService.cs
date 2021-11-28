@@ -52,17 +52,15 @@
 
         public async void Export()
         {
-            //创建workbook，说白了就是在内存中创建一个Excel文件
             IWorkbook workbook = new HSSFWorkbook();
-            //要添加至少一个sheet,没有sheet的excel是打不开的
             ISheet sheet1 = workbook.CreateSheet("sheet1");
 
-            IRow row0 = sheet1.CreateRow(0);//添加第1行,注意行列的索引都是从0开始的
+            IRow row0 = sheet1.CreateRow(0);
 
             for (int i = 0; i < headers.Length; i++)
             {
-                ICell cell1 = row0.CreateCell(i);//给第1行添加第1个单元格
-                cell1.SetCellValue(headers[i]);//给单元格赋值
+                ICell cell1 = row0.CreateCell(i);
+                cell1.SetCellValue(headers[i]);
             }
 
             var patients = await this.GetAllAsync();
