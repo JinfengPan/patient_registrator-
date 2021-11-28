@@ -17,6 +17,6 @@
 
         void Remove(Patient patient);
 
-        Task Export();
+        Task Export(string fileName);
     }
 }

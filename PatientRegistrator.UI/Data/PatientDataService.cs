@@ -50,7 +50,7 @@
             this._coreContext.Remove(patient);
         }
 
-        public async Task Export()
+        public async Task Export(string fileName)
         {
             IWorkbook workbook = new HSSFWorkbook();
             ISheet sheet1 = workbook.CreateSheet("sheet1");
@@ -144,7 +144,7 @@
                 row.CreateCell(72, CellType.String).SetCellValue(patients[i].FollowUpTime);
             }
             
-            using (FileStream file = new FileStream(@"D:/test.xls", FileMode.Create))
+            using (FileStream file = new FileStream(fileName, FileMode.Create))
             {
                 workbook.Write(file);
             }
