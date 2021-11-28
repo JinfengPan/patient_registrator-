@@ -70,7 +70,7 @@
                 IRow row = sheet1.CreateRow(i + 1);
 
                 row.CreateCell(0, CellType.String).SetCellValue(patients[i].Name);
-                row.CreateCell(1, CellType.Numeric).SetCellValue(Convert.ToString(patients[i].Age));
+                SetNullabeIntCell(row, 1, patients[i].Age);
                 row.CreateCell(2, CellType.String).SetCellValue(patients[i].Gender.HasValue ? (patients[i].Gender.Value == Gender.Male ? "男" : "女") : null);
                 row.CreateCell(3, CellType.String).SetCellValue(patients[i].Hometown);
                 row.CreateCell(4, CellType.String).SetCellValue(patients[i].MainSymptom);
@@ -148,6 +148,13 @@
             {
                 workbook.Write(file);
             }
+        }
+
+        private static void SetNullabeIntCell(IRow row, int cellIndex, int? num)
+        {
+            if (!num.HasValue) return;
+
+            row.CreateCell(cellIndex, CellType.Numeric).SetCellValue(num.Value);
         }
 
         private static string ConvertBooleanToString(bool? val)
