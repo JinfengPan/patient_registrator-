@@ -7,6 +7,7 @@
     using System.Windows.Input;
 
     using PatientRegistrator.Model;
+    using PatientRegistrator.UI.Data;
     using PatientRegistrator.UI.Events;
 
     using Prism.Commands;
@@ -20,8 +21,10 @@
 
         public MainViewModel(INavigationViewModel navigationViewModel, 
                              Func<IPatientDetailViewModel> patientDetailViewModelCreator,
-                             IEventAggregator eventAggregator)
+                             IEventAggregator eventAggregator,
+                             IPatientDataService patientPatientDataService)
         {
+            this._patientDataService = patientPatientDataService;
             this._patientDetailViewModelCreator = patientDetailViewModelCreator;
             this.NavigationViewModel = navigationViewModel;
 
@@ -29,7 +32,13 @@
             this._eventAggregator.GetEvent<OpenPatientDetailViewEvent>().Subscribe(OnEditPatientDetail);
             this._eventAggregator.GetEvent<AfterPatientSavedEvent>().Subscribe(AfterPatientSaved);
             this.CreateNewPatientCommand = new DelegateCommand(this.OnCreateNewPatientExecute);
+            this.ExportPatientsCommand = new DelegateCommand(this.OnExportPatientsExecute);
             this.CancelPatientDetail = new DelegateCommand(this.CancelPatientDetailForm);
+        }
+
+        private async void OnExportPatientsExecute()
+        {
+            await this._patientDataService.Export();
         }
 
         private void CancelPatientDetailForm()
@@ -38,10 +47,13 @@
         }
 
         public ICommand CreateNewPatientCommand { get; }
+        public ICommand ExportPatientsCommand { get; }
         public ICommand CancelPatientDetail { get; }
         public INavigationViewModel NavigationViewModel { get; }
 
         private IPatientDetailViewModel _patientDetailViewModel;
+
+        private IPatientDataService _patientDataService;
 
         public IPatientDetailViewModel PatientDetailViewModel
         {
