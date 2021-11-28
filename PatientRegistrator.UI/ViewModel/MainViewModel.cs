@@ -45,7 +45,14 @@
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                await this._patientDataService.Export(saveFileDialog.FileName);
+                try
+                {
+                    await this._patientDataService.Export(saveFileDialog.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
