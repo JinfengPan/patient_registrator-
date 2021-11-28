@@ -42,6 +42,7 @@
         {
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel 97-2003 Workbook (*.xls)|*.xls|All files (*.*)|*.*";
 
             if (saveFileDialog.ShowDialog() == true)
             {
