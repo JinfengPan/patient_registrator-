@@ -49,6 +49,7 @@
                 try
                 {
                     await this._patientDataService.Export(saveFileDialog.FileName);
+                    MessageBox.Show("导出完成 : )");
                 }
                 catch (Exception ex)
                 {
